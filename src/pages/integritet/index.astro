@@ -1,0 +1,18 @@
+---
+import Base from '../../layouts/Base.astro';
+import site from '../../data/site.json';
+---
+<Base title={`Integritet | ${site.brand.name}`} description="Så hanteras dina uppgifter när du besöker hemsidan eller skickar en förfrågan.">
+  <section><div class="wrap prose">
+    <div class="eyebrow">Integritet</div>
+    <h1>Så hanteras dina uppgifter</h1>
+    <h2>Kontaktformuläret</h2>
+    <p>När du skickar en förfrågan skickas ditt namn, din e-postadress och ditt meddelande direkt till min e-post. Hemsidan sparar inte meddelandet i någon databas eller logg.</p>
+    <p>Skriv inte känsliga personuppgifter eller detaljer om din hälsa i formuläret. Det tar vi i stället när vi ses.</p>
+    <p>Jag använder uppgifterna bara för att svara dig. Vill du att jag raderar vår mejlväxling går det bra att be om det.</p>
+    <h2>Skydd mot skräppost</h2>
+    <p>Formuläret skyddas av Cloudflare Turnstile, som kontrollerar att det är en människa som skickar. Turnstile används inte för spårning eller annonser.</p>
+    <h2>Kakor och statistik</h2>
+    <p>Hemsidan sätter inga egna kakor och använder ingen spårning för statistik eller annonser.</p>
+  </div></section>
+</Base>

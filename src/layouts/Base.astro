@@ -1,0 +1,55 @@
+---
+import '../styles/global.css';
+import site from '../data/site.json';
+
+interface Props {
+  title?: string;
+  description?: string;
+  noindex?: boolean;
+  schema?: object;
+}
+
+const { title = site.meta.title, description = site.meta.description, noindex = false, schema } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const onHome = Astro.url.pathname === '/';
+const nav = [
+  ['tjanster', 'Tjänster'],
+  ['om', 'Om mig'],
+  ['priser', 'Priser'],
+  ['kontakt', 'Kontakt'],
+];
+---
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <meta name="theme-color" content="#f6f3ed">
+  <link rel="canonical" href={canonical}>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  {noindex && <meta name="robots" content="noindex">}
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="sv_SE">
+  <meta property="og:site_name" content={site.brand.name}>
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:url" content={canonical}>
+  {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
+  <slot name="head" />
+</head>
+<body>
+<a class="skip" href="#innehall">Hoppa till innehållet</a>
+<header><div class="wrap nav">
+  <a class="brand" href={onHome ? '#top' : '/'}>{site.brand.name}<small>{site.brand.tagline}</small></a>
+  <nav aria-label="Huvudmeny">
+    {nav.map(([id, label]) => <a href={onHome ? `#${id}` : `/#${id}`}>{label}</a>)}
+  </nav>
+</div></header>
+<main id="top"><div id="innehall"></div>
+  <slot />
+</main>
+<footer><div class="wrap footer-row"><span>© {new Date().getFullYear()} {site.brand.name}</span><span><a href="/integritet/">Integritet</a></span></div></footer>
+</body>
+</html>

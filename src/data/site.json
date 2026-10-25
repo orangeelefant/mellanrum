@@ -1,0 +1,96 @@
+{
+  "meta": {
+    "title": "Mellanrum Höglund | Psykoterapi, handledning & utbildning",
+    "description": "Mellanrum Höglund – psykoterapi, handledning och utbildning i Stockholm, både fysiskt och digitalt."
+  },
+  "brand": {
+    "name": "Mellanrum Höglund",
+    "tagline": "Psykoterapi · Handledning · Utbildning"
+  },
+  "hero": {
+    "eyebrow": "Psykoterapi · Handledning · Utbildning",
+    "heading": "Det behöver finnas ett mellanrum.",
+    "lead": "En plats att stanna upp, förstå mer av det som pågår och hitta nya sätt att möta livet. Jag erbjuder psykoterapi för privatpersoner samt handledning och utbildning för yrkesverksamma.",
+    "primaryButton": "Ta kontakt",
+    "secondaryButton": "Läs om mina tjänster",
+    "caption": "Utrymme för eftertanke och förändring."
+  },
+  "services": {
+    "eyebrow": "Vad jag erbjuder",
+    "heading": "Olika vägar till större förståelse",
+    "intro": "Du kan komma som privatperson med något du vill undersöka, eller som yrkesverksam med behov av reflektion, stöd och utveckling i arbetet.",
+    "items": [
+      {
+        "audience": "Privatpersoner",
+        "title": "Psykoterapi",
+        "text": "Samtal för dig som vill förstå dig själv och dina relationer bättre, hantera livets svårigheter eller skapa förändring. Vi börjar där du befinner dig och utforskar tillsammans vad du behöver.",
+        "linkText": "Fråga om psykoterapi"
+      },
+      {
+        "audience": "Yrkesverksamma",
+        "title": "Handledning",
+        "text": "En trygg och reflekterande plats för yrkesmässiga frågor, möten som berör och situationer som behöver ses ur fler perspektiv. För individuella behandlare och arbetsgrupper.",
+        "linkText": "Fråga om handledning"
+      },
+      {
+        "audience": "Verksamheter",
+        "title": "Utbildning",
+        "text": "Föreläsningar och utbildningsinsatser inom psykoterapeutiskt arbete, bemötande, relationer och professionell utveckling. Innehåll och upplägg anpassas efter uppdraget.",
+        "linkText": "Prata om ett uppdrag"
+      }
+    ]
+  },
+  "about": {
+    "image": "/src/assets/bilder/anna.jpg",
+    "imageAlt": "Anna Höglund, legitimerad psykoterapeut",
+    "quote": "Ibland börjar förändring med att få stanna upp tillsammans med någon.",
+    "eyebrow": "Om mig",
+    "heading": "Kunskap, närvaro och nyfikenhet",
+    "paragraphs": [
+      "Jag heter Anna Höglund och är legitimerad psykoterapeut med bakgrund som sjuksköterska och präst. Jag har också erfarenhet av handledning, undervisning och professionellt lärande.",
+      "I mötet vill jag skapa ett varmt och respektfullt rum där det går att tänka högt, undersöka det som är svårt och närma sig nya perspektiv utan att behöva ha alla svar från början.",
+      "Mitt arbetssätt präglas av lyhördhet, eftertanke och respekt för varje människas sammanhang. Vi utforskar tillsammans vad som blir hjälpsamt för just dig eller er verksamhet."
+    ],
+    "tags": ["Leg. psykoterapeut", "Sjuksköterska", "Präst", "Handledning & utbildning"]
+  },
+  "pricing": {
+    "eyebrow": "Priser",
+    "heading": "Tydlighet från början",
+    "intro": "Här hittar du information om pris och upplägg. Hör gärna av dig om du undrar något innan du bokar ett första samtal.",
+    "items": [
+      {
+        "title": "Psykoterapi",
+        "price": "1 350 kr",
+        "text": "Per samtal, 50 minuter.",
+        "note": "Samtal erbjuds i Stockholm och digitalt. Information om betalning och avbokning lämnas i samband med överenskommelse."
+      },
+      {
+        "title": "Handledning",
+        "price": "Enligt överenskommelse",
+        "text": "Pris utifrån längd, omfattning och om handledningen sker individuellt eller i grupp.",
+        "note": "Förfrågningar välkomnas från enskilda yrkesverksamma och verksamheter."
+      },
+      {
+        "title": "Utbildning",
+        "price": "Offert",
+        "text": "Upplägg och pris anpassas efter innehåll, tidsåtgång och uppdragsgivarens behov.",
+        "note": "Kontakta mig gärna för att diskutera ett uppdrag."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Kontakt",
+    "heading": "Du är välkommen att höra av dig.",
+    "paragraphs": [
+      "Du behöver inte veta exakt vad du vill säga från början. Skriv några rader om vad du undrar över, så tar vi det därifrån."
+    ],
+    "location": "Stockholm · samtal på plats och digitalt",
+    "notice": "Skriv gärna kort i ditt första meddelande. Skicka inte känsliga personuppgifter eller detaljer om hälsa via formuläret eller vanlig e-post.",
+    "formHeading": "Skicka en förfrågan",
+    "formNotice": "Meddelandet skickas direkt till min e-post och sparas inte på hemsidan.",
+    "messagePlaceholder": "Skriv ett kort meddelande – undvik känsliga personuppgifter.",
+    "submit": "Skicka förfrågan",
+    "thanksHeading": "Tack för ditt meddelande.",
+    "thanksText": "Jag läser det och återkommer till dig så snart jag kan."
+  }
+}

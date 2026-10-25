@@ -1,0 +1,17 @@
+{
+  // Contact form: verifies Turnstile and forwards the message by e-mail. Nothing is stored or logged.
+  "name": "mellanrum-kontakt",
+  "main": "src/index.js",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": true,
+  "observability": { "enabled": false },
+  "vars": {
+    "SITE_URL": "https://mellanrum.pages.dev",
+    "ALLOWED_HOSTS": "mellanrum.pages.dev,mellanrumpsykoterapi.se,www.mellanrumpsykoterapi.se",
+    "FROM_ADDRESS": "formular@mellanrumpsykoterapi.se"
+  },
+  "send_email": [
+    { "name": "EMAIL", "destination_address": "anna.b.hoglund@gmail.com" }
+  ]
+  // Secret: TURNSTILE_SECRET (wrangler secret put TURNSTILE_SECRET)
+}

@@ -1,0 +1,123 @@
+---
+import { Picture } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+import { CONTACT_ENDPOINT, TURNSTILE_SITEKEY } from '../config';
+
+const { hero, services, about, pricing, contact } = site;
+
+// The CMS stores the image path as text; resolve it to the bundled asset by file name.
+const images = import.meta.glob<{ default: ImageMetadata }>('../assets/bilder/*.{jpg,jpeg,png,webp}', { eager: true });
+const portrait = Object.entries(images).find(([path]) => path.split('/').pop() === about.image.split('/').pop())?.[1].default;
+
+const numericPrice = (price: string) => {
+  const digits = price.replace(/\D/g, '');
+  return digits ? Number(digits) : undefined;
+};
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: site.brand.name,
+  url: Astro.site?.href,
+  description: site.meta.description,
+  areaServed: 'Stockholm',
+  address: { '@type': 'PostalAddress', addressLocality: 'Stockholm', addressCountry: 'SE' },
+  founder: { '@type': 'Person', name: 'Anna Höglund', jobTitle: 'Legitimerad psykoterapeut' },
+  makesOffer: pricing.items.map((item) => {
+    const price = numericPrice(item.price);
+    return {
+      '@type': 'Offer',
+      itemOffered: { '@type': 'Service', name: item.title, description: item.text },
+      ...(price ? { price, priceCurrency: 'SEK' } : {}),
+    };
+  }),
+};
+---
+<Base schema={schema}>
+  <Fragment slot="head">
+    <link rel="preconnect" href="https://challenges.cloudflare.com">
+  </Fragment>
+
+  <section class="hero"><div class="wrap hero-grid">
+    <div><div class="eyebrow">{hero.eyebrow}</div>
+      <h1>{hero.heading}</h1>
+      <p class="lead">{hero.lead}</p>
+      <div class="actions"><a class="btn primary" href="#kontakt">{hero.primaryButton}</a><a class="btn" href="#tjanster">{hero.secondaryButton}</a></div>
+    </div>
+    <div class="hero-art" role="img" aria-label="Abstrakt illustration i dämpade gröna och terrakottafärger"><div class="sun"></div><div class="arch"></div><div class="plant"></div><div class="art-caption">{hero.caption}</div></div>
+  </div></section>
+
+  <section class="services" id="tjanster"><div class="wrap">
+    <div class="section-head"><div class="eyebrow">{services.eyebrow}</div><h2>{services.heading}</h2><p>{services.intro}</p></div>
+    <div class="cards">
+      {services.items.map((item, i) => (
+        <article class="card">
+          <div class="num">{String(i + 1).padStart(2, '0')} / {item.audience}</div>
+          <h3>{item.title}</h3>
+          <p>{item.text}</p>
+          <a href="#kontakt">{item.linkText} →</a>
+        </article>
+      ))}
+    </div>
+  </div></section>
+
+  <section id="om"><div class="wrap split">
+    <div>
+      {portrait && (
+        <figure class="portrait">
+          <Picture src={portrait} alt={about.imageAlt} formats={['avif', 'webp']} width={900} widths={[400, 640, 900]} sizes="(max-width: 760px) calc(100vw - 40px), 420px" />
+        </figure>
+      )}
+      <blockquote class="quote">“{about.quote}”</blockquote>
+    </div>
+    <div><div class="eyebrow">{about.eyebrow}</div><h2>{about.heading}</h2>
+      {about.paragraphs.map((p) => <p>{p}</p>)}
+      <ul class="credentials">{about.tags.map((tag) => <li class="tag">{tag}</li>)}</ul>
+    </div>
+  </div></section>
+
+  <section class="pricing" id="priser"><div class="wrap">
+    <div class="section-head"><div class="eyebrow">{pricing.eyebrow}</div><h2>{pricing.heading}</h2><p>{pricing.intro}</p></div>
+    <div class="price-grid">
+      {pricing.items.map((item) => (
+        <article class="price-card"><h3>{item.title}</h3><div class="price">{item.price}</div><p>{item.text}</p><p class="price-note">{item.note}</p></article>
+      ))}
+    </div>
+  </div></section>
+
+  <section id="kontakt"><div class="wrap contact-grid">
+    <div><div class="eyebrow">{contact.eyebrow}</div><h2>{contact.heading}</h2>
+      {contact.paragraphs.map((p) => <p>{p}</p>)}
+      <p><strong>Plats:</strong> {contact.location}</p>
+      <p class="notice">{contact.notice}</p>
+    </div>
+    <div class="contact-panel"><h3>{contact.formHeading}</h3>
+      <p class="notice">{contact.formNotice}</p>
+      <p class="form-error" id="form-error" role="alert" hidden></p>
+      <form method="post" action={CONTACT_ENDPOINT}>
+        <label for="name">Namn</label><input id="name" name="name" autocomplete="name" placeholder="Ditt namn" required maxlength="120">
+        <label for="email">E-post</label><input id="email" name="email" type="email" autocomplete="email" placeholder="namn@exempel.se" required maxlength="200">
+        <label for="message">Vad vill du fråga om?</label><textarea id="message" name="message" placeholder={contact.messagePlaceholder} required maxlength="3000"></textarea>
+        <div class="cf-turnstile" data-sitekey={TURNSTILE_SITEKEY} data-language="sv"></div>
+        <button class="btn primary" type="submit">{contact.submit}</button>
+      </form>
+    </div>
+  </div></section>
+  <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <script is:inline>
+    // The Worker redirects back with ?fel=<reason> when a message could not be sent.
+    const reasons = {
+      uppgifter: 'Fyll i namn, e-post och meddelande.',
+      kontroll: 'Kontrollen mot skräppost gick inte igenom. Försök igen.',
+      skicka: 'Meddelandet kunde inte skickas just nu. Försök igen om en stund.',
+    };
+    const reason = reasons[new URLSearchParams(location.search).get('fel')];
+    if (reason) {
+      const el = document.getElementById('form-error');
+      el.textContent = reason;
+      el.hidden = false;
+    }
+  </script>
+</Base>

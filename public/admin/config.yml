@@ -1,0 +1,112 @@
+# Sveltia CMS: Anna edits src/data/site.json and the portrait folder. Each save is a commit to main,
+# which triggers the GitHub Action that builds and deploys to Cloudflare Pages.
+backend:
+  name: github
+  repo: orangeelefant/mellanrum
+  branch: main
+  base_url: https://sveltia-cms-auth.PLACEHOLDER.workers.dev
+
+media_folder: src/assets/bilder
+public_folder: /src/assets/bilder
+site_url: https://mellanrum.pages.dev
+
+collections:
+  - name: innehall
+    label: Hemsidans innehåll
+    files:
+      - name: site
+        label: Texter och priser
+        file: src/data/site.json
+        fields:
+          - name: meta
+            label: Google och delning
+            widget: object
+            fields:
+              - { name: title, label: Sidans titel (syns i Google), widget: string }
+              - { name: description, label: Beskrivning (syns i Google), widget: text }
+          - name: brand
+            label: Namn i sidhuvudet
+            widget: object
+            fields:
+              - { name: name, label: Namn, widget: string }
+              - { name: tagline, label: Rad under namnet, widget: string }
+          - name: hero
+            label: Överst på sidan
+            widget: object
+            fields:
+              - { name: eyebrow, label: Liten rad ovanför rubriken, widget: string }
+              - { name: heading, label: Rubrik, widget: string }
+              - { name: lead, label: Ingress, widget: text }
+              - { name: primaryButton, label: Knapp 1, widget: string }
+              - { name: secondaryButton, label: Knapp 2, widget: string }
+              - { name: caption, label: Text på illustrationen, widget: string }
+          - name: services
+            label: Tjänster
+            widget: object
+            fields:
+              - { name: eyebrow, label: Liten rad ovanför rubriken, widget: string }
+              - { name: heading, label: Rubrik, widget: string }
+              - { name: intro, label: Ingress, widget: text }
+              - name: items
+                label: Tjänster
+                label_singular: Tjänst
+                widget: list
+                fields:
+                  - { name: audience, label: För vem, widget: string }
+                  - { name: title, label: Rubrik, widget: string }
+                  - { name: text, label: Text, widget: text }
+                  - { name: linkText, label: Länktext, widget: string }
+          - name: about
+            label: Om mig
+            widget: object
+            fields:
+              - { name: image, label: Porträtt, widget: image }
+              - { name: imageAlt, label: Beskrivning av bilden (för skärmläsare), widget: string }
+              - { name: quote, label: Citat, widget: text }
+              - { name: eyebrow, label: Liten rad ovanför rubriken, widget: string }
+              - { name: heading, label: Rubrik, widget: string }
+              - name: paragraphs
+                label: Stycken
+                label_singular: Stycke
+                widget: list
+                field: { name: paragraph, label: Stycke, widget: text }
+              - name: tags
+                label: Etiketter
+                label_singular: Etikett
+                widget: list
+                field: { name: tag, label: Etikett, widget: string }
+          - name: pricing
+            label: Priser
+            widget: object
+            fields:
+              - { name: eyebrow, label: Liten rad ovanför rubriken, widget: string }
+              - { name: heading, label: Rubrik, widget: string }
+              - { name: intro, label: Ingress, widget: text }
+              - name: items
+                label: Priser
+                label_singular: Pris
+                widget: list
+                fields:
+                  - { name: title, label: Tjänst, widget: string }
+                  - { name: price, label: Pris, widget: string, hint: "Till exempel 1 350 kr" }
+                  - { name: text, label: Text, widget: text }
+                  - { name: note, label: Liten text under, widget: text }
+          - name: contact
+            label: Kontakt
+            widget: object
+            fields:
+              - { name: eyebrow, label: Liten rad ovanför rubriken, widget: string }
+              - { name: heading, label: Rubrik, widget: string }
+              - name: paragraphs
+                label: Stycken
+                label_singular: Stycke
+                widget: list
+                field: { name: paragraph, label: Stycke, widget: text }
+              - { name: location, label: Plats, widget: string }
+              - { name: notice, label: Text om känsliga uppgifter, widget: text }
+              - { name: formHeading, label: Formulärets rubrik, widget: string }
+              - { name: formNotice, label: Text ovanför formuläret, widget: text }
+              - { name: messagePlaceholder, label: Exempeltext i meddelanderutan, widget: string }
+              - { name: submit, label: Knapptext, widget: string }
+              - { name: thanksHeading, label: Rubrik efter skickat meddelande, widget: string }
+              - { name: thanksText, label: Text efter skickat meddelande, widget: text }

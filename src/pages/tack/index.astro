@@ -1,0 +1,12 @@
+---
+import Base from '../../layouts/Base.astro';
+import site from '../../data/site.json';
+---
+<Base title={`${site.contact.thanksHeading} | ${site.brand.name}`} noindex>
+  <section><div class="wrap prose">
+    <div class="eyebrow">{site.contact.eyebrow}</div>
+    <h1>{site.contact.thanksHeading}</h1>
+    <p class="lead">{site.contact.thanksText}</p>
+    <p><a class="btn" href="/">Till startsidan</a></p>
+  </div></section>
+</Base>
