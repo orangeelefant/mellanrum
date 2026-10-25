@@ -5,3 +5,4 @@
 - Sveltia CMS på /admin för texter, priser och porträtt.
 - Kontaktformulär via Worker med Turnstile och send_email, inget sparas.
 - Deploy till Cloudflare Pages via GitHub Actions.
+- Formulärets endpoint och Turnstile-nyckel ifyllda, förhandsadress mellanrum-9ac.pages.dev.
