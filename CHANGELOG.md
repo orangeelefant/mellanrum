@@ -7,3 +7,4 @@
 - Deploy till Cloudflare Pages via GitHub Actions.
 - Formulärets endpoint och Turnstile-nyckel ifyllda, förhandsadress mellanrum-9ac.pages.dev.
 - CI bygger med Node 24.
+- /admin loggar in via sveltia-cms-auth.mellanrum-hoglund.workers.dev.

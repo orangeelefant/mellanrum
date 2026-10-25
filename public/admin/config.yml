@@ -4,7 +4,7 @@ backend:
   name: github
   repo: orangeelefant/mellanrum
   branch: main
-  base_url: https://sveltia-cms-auth.PLACEHOLDER.workers.dev
+  base_url: https://sveltia-cms-auth.mellanrum-hoglund.workers.dev
 
 media_folder: src/assets/bilder
 public_folder: /src/assets/bilder
