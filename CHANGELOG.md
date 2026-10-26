@@ -16,3 +16,4 @@
 - DESIGN.md och TODO uppdaterade efter SEO-audit.
 - Innehåll enligt Annas förlaga v2: sex tjänster, nya priser, KBT/PDT, sexologi och SAPU, varumärket Mellanrum
 - Bokningsknapp i hero och kontakt, styrs av fältet Bokning i /admin (dold när länken är tom)
+- Delningsbilden visar Mellanrum; DESIGN.md avvikelse 13-14 mot förlaga v2; pris 4 000 kr i CLAUDE.md

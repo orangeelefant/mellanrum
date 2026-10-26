@@ -1,6 +1,6 @@
-# Mellanrum Höglund
+# Mellanrum
 
-Anna Höglund's one-page site for psychotherapy, supervision and training in Stockholm. Fixed-price job (4 999 kr exkl. moms). The repo moves to Anna's GitHub (AnnaHoglund12) at delivery.
+Anna Höglund's one-page site for psychotherapy, supervision and training in Stockholm. Fixed-price job (4 000 kr exkl. moms, lowered from 4 999 on 2026-10-26, booking button included). The repo moves to Anna's GitHub (AnnaHoglund12) at delivery.
 
 ## Stack
 - Astro 7, static output, no client framework. All copy in `src/data/site.json`.

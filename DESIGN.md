@@ -1,6 +1,6 @@
 ---
 version: alpha
-name: Mellanrum Höglund
+name: Mellanrum
 description: Anna Höglund's practice site. Values mirror :root in src/styles/global.css, which follows Anna's ChatGPT mockup (fran-anna-2026-10-22).
 colors:
   paper: "#f6f3ed"
@@ -87,7 +87,7 @@ components:
     padding: 12px
 ---
 
-# Mellanrum Höglund design system
+# Mellanrum design system
 
 The tokens live in `:root` in `src/styles/global.css`. Anna approved the job on the condition that the site looks as close to her mockup as possible, so the mockup is the spec. Change code and this file in the same commit.
 
@@ -147,3 +147,5 @@ Focus is a 2px clay-text outline with 3px offset. A skip link appears on focus. 
 12. Added a 404 page and a 1200x630 share image (public/og.jpg) in the same paper, ink and Georgia style. The mockup has neither.
 
 The Impeccable detector also flags the eyebrow kickers above every heading and the cream background. Both come from the mockup and stay, because Anna made the mockup the condition for the order.
+13. The page title is "Legitimerad psykoterapeut i Stockholm | Mellanrum" (mockup: "Mellanrum | Psykoterapi, handledning & utbildning"), so the search result names the profession and the city.
+14. An optional "Boka tid" button appears in the hero and the contact column when Anna fills in a booking link in /admin. With the field empty the page matches the mockup.
