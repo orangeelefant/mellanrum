@@ -9,3 +9,4 @@
 - CI bygger med Node 24.
 - /admin loggar in via sveltia-cms-auth.mellanrum-hoglund.workers.dev.
 - Ny title och description, og:image (public/og.jpg) och twitter:card.
+- Egen 404-sida, okända adresser svarar 404.

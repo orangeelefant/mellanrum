@@ -1,0 +1,12 @@
+---
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+---
+<Base title={`Sidan finns inte | ${site.brand.name}`} noindex>
+  <section><div class="wrap prose">
+    <div class="eyebrow">404</div>
+    <h1>Sidan finns inte</h1>
+    <p>Adressen kan ha ändrats eller skrivits fel.</p>
+    <p><a class="btn primary" href="/">Till startsidan</a></p>
+  </div></section>
+</Base>
