@@ -10,3 +10,4 @@
 - /admin loggar in via sveltia-cms-auth.mellanrum-hoglund.workers.dev.
 - Ny title och description, og:image (public/og.jpg) och twitter:card.
 - Egen 404-sida, okända adresser svarar 404.
+- SRI-hash på CMS-skriptet, X-Frame-Options och frame-ancestors.
