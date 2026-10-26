@@ -12,3 +12,4 @@
 - Egen 404-sida, okända adresser svarar 404.
 - SRI-hash på CMS-skriptet, X-Frame-Options och frame-ancestors.
 - Turnstile (~760 KiB) laddas när formuläret närmar sig.
+- Integritetssidan kompletterad enligt GDPR art. 13 (utom lagringstid).
