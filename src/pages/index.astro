@@ -105,7 +105,24 @@ const schema = {
       </form>
     </div>
   </div></section>
-  <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <script is:inline>
+    // Turnstile is ~760 KiB, so it loads only when the contact form comes near the viewport.
+    const loadTurnstile = () => {
+      const s = document.createElement('script');
+      s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+      s.async = true;
+      document.head.appendChild(s);
+    };
+    const kontakt = document.getElementById('kontakt');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        if (entries.some((e) => e.isIntersecting)) { io.disconnect(); loadTurnstile(); }
+      }, { rootMargin: '800px 0px' });
+      io.observe(kontakt);
+    } else {
+      loadTurnstile();
+    }
+  </script>
   <script is:inline>
     // The Worker redirects back with ?fel=<reason> when a message could not be sent.
     const reasons = {

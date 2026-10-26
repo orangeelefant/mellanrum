@@ -11,3 +11,4 @@
 - Ny title och description, og:image (public/og.jpg) och twitter:card.
 - Egen 404-sida, okända adresser svarar 404.
 - SRI-hash på CMS-skriptet, X-Frame-Options och frame-ancestors.
+- Turnstile (~760 KiB) laddas när formuläret närmar sig.
