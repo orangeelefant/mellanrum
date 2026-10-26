@@ -1,16 +1,16 @@
 {
   "meta": {
-    "title": "Legitimerad psykoterapeut i Stockholm | Mellanrum Höglund",
-    "description": "Anna Höglund är legitimerad psykoterapeut med bakgrund som sjuksköterska och präst. Psykoterapi, handledning och utbildning i Stockholm och digitalt."
+    "title": "Legitimerad psykoterapeut i Stockholm | Mellanrum",
+    "description": "Anna Höglund är legitimerad psykoterapeut i Stockholm. Psykoterapi, samtal om intimitet och sexualitet, handledning och utbildning, på plats och digitalt."
   },
   "brand": {
-    "name": "Mellanrum Höglund",
+    "name": "Mellanrum",
     "tagline": "Psykoterapi · Handledning · Utbildning"
   },
   "hero": {
     "eyebrow": "Psykoterapi · Handledning · Utbildning",
     "heading": "Det behöver finnas ett mellanrum.",
-    "lead": "En plats att stanna upp, förstå mer av det som pågår och hitta nya sätt att möta livet. Jag erbjuder psykoterapi för privatpersoner samt handledning och utbildning för yrkesverksamma.",
+    "lead": "En plats att stanna upp, förstå mer av det som pågår och hitta nya sätt att möta livet. Jag erbjuder psykoterapi, samtal kring intimitet och sexualitet samt handledning och utbildning. Jag arbetar också med frågor som rör trauma, stress, prestation och mental förberedelse.",
     "primaryButton": "Ta kontakt",
     "secondaryButton": "Läs om mina tjänster",
     "caption": "Utrymme för eftertanke och förändring."
@@ -27,15 +27,33 @@
         "linkText": "Fråga om psykoterapi"
       },
       {
-        "audience": "Yrkesverksamma",
-        "title": "Handledning",
-        "text": "En trygg och reflekterande plats för yrkesmässiga frågor, möten som berör och situationer som behöver ses ur fler perspektiv. För individuella behandlare och arbetsgrupper.",
-        "linkText": "Fråga om handledning"
+        "audience": "Sexologi",
+        "title": "Intimitet och sexualitet",
+        "text": "Samtal om lust, närhet, intimitet och svårigheter i det sexuella eller relationella livet. Jag har läst sexologi vid Karolinska Institutet.",
+        "linkText": "Fråga om samtal"
       },
       {
-        "audience": "Verksamheter",
-        "title": "Utbildning",
-        "text": "Föreläsningar och utbildningsinsatser inom psykoterapeutiskt arbete, bemötande, relationer och professionell utveckling. Innehåll och upplägg anpassas efter uppdraget.",
+        "audience": "Kris och trauma",
+        "title": "Trauma, sorg och livskriser",
+        "text": "Stöd vid krisreaktioner, traumarelaterad problematik och PTSD, sorg, förlust och existentiella frågor. Min bakgrund inom specialistpsykiatri, primärvård och som präst bidrar till ett brett perspektiv.",
+        "linkText": "Ta kontakt"
+      },
+      {
+        "audience": "Stress och prestation",
+        "title": "Mental förberedelse",
+        "text": "Stöd vid höga prestationskrav, stress och ovisshet – exempelvis för idrottare och andra som behöver förbereda sig mentalt inför krävande situationer. Jag har varit instruktör på Friskis & Svettis sedan 1998.",
+        "linkText": "Läs mer genom kontakt"
+      },
+      {
+        "audience": "Polis och polisutbildning",
+        "title": "Att fungera under press",
+        "text": "Samtal för dig som funderar på att söka polisutbildningen, studerar till polis eller arbetar som polis. Fokus kan vara stress, prestationskrav, mental förberedelse och att möta oförutsägbara situationer. Jag har genomgått polisutbildningen och har förståelse för utbildningens krav och frågor kring svåra besked, däribland dödsbud.",
+        "linkText": "Fråga om samtal"
+      },
+      {
+        "audience": "Yrkesverksamma",
+        "title": "Handledning och utbildning",
+        "text": "Jag erbjuder yrkeshandledning, verksamhetshandledning och handledning för steg 1-terapeuter som vill uppfylla behörighetskraven för att söka det legitimationsgrundande psykoterapeutprogrammet. Jag har genomgått handledar- och lärarutbildning i psykoterapi. Innehåll och upplägg anpassas efter uppdraget.",
         "linkText": "Prata om ett uppdrag"
       }
     ]
@@ -49,12 +67,17 @@
     "paragraphs": [
       "Jag heter Anna Höglund och är legitimerad psykoterapeut med bakgrund som sjuksköterska och präst. Jag har också erfarenhet av handledning, undervisning och professionellt lärande.",
       "I mötet vill jag skapa ett varmt och respektfullt rum där det går att tänka högt, undersöka det som är svårt och närma sig nya perspektiv utan att behöva ha alla svar från början.",
-      "Mitt arbetssätt präglas av lyhördhet, eftertanke och respekt för varje människas sammanhang. Vi utforskar tillsammans vad som blir hjälpsamt för just dig eller er verksamhet."
+      "Mitt arbetssätt präglas av lyhördhet, eftertanke och respekt för varje människas sammanhang. Vi utforskar tillsammans vad som blir hjälpsamt för just dig eller er verksamhet.",
+      "I terapirummet har jag kompetens inom både kognitiv beteendeterapi (KBT) och psykodynamisk terapi (PDT), främst affektfobiterapi. Arbetssätt och fokus anpassas efter dig, dina behov och det vi tillsammans kommer fram till.",
+      "Jag har läst sexologi vid Karolinska Institutet och genomgått handledar- och lärarutbildning i psykoterapi vid Högskolan SAPU."
     ],
     "tags": [
       "Leg. psykoterapeut",
       "Sjuksköterska",
       "Präst",
+      "KBT & PDT",
+      "Sexologi · KI",
+      "Handledar- och lärarutbildning · SAPU",
       "Handledning & utbildning"
     ]
   },
@@ -66,14 +89,20 @@
       {
         "title": "Psykoterapi",
         "price": "1 350 kr",
-        "text": "Per samtal, 50 minuter.",
+        "text": "Per samtal, 45 minuter.",
         "note": "Samtal erbjuds i Stockholm och digitalt. Information om betalning och avbokning lämnas i samband med överenskommelse."
       },
       {
-        "title": "Handledning",
-        "price": "Enligt överenskommelse",
-        "text": "Pris utifrån längd, omfattning och om handledningen sker individuellt eller i grupp.",
-        "note": "Förfrågningar välkomnas från enskilda yrkesverksamma och verksamheter."
+        "title": "Verksamhetshandledning",
+        "price": "2 500 kr exkl. moms",
+        "text": "Per samtal, 50 minuter.",
+        "note": "Handledning för verksamheter och arbetsgrupper. Upplägg anpassas efter uppdragets behov."
+      },
+      {
+        "title": "Handledning i psykoterapeutiskt arbete för steg 1-terapeuter",
+        "price": "1 900 kr exkl. moms",
+        "text": "Per samtal, 50 minuter.",
+        "note": "Handledning med fokus på det psykoterapeutiska arbetet och utvecklingen i terapeutrollen."
       },
       {
         "title": "Utbildning",
