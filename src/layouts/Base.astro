@@ -36,6 +36,11 @@ const nav = [
   <meta property="og:title" content={title}>
   <meta property="og:description" content={description}>
   <meta property="og:url" content={canonical}>
+  <meta property="og:image" content={new URL('/og.jpg', Astro.site).href}>
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Anna Höglund, legitimerad psykoterapeut i Stockholm">
+  <meta name="twitter:card" content="summary_large_image">
   {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
   <slot name="head" />
 </head>
