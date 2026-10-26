@@ -144,5 +144,6 @@ Focus is a 2px clay-text outline with 3px offset. A skip link appears on focus. 
 9. Added a Turnstile spam check above the submit button, a thank-you page and error messages.
 10. Credentials are a list and the quote is a blockquote, which looks the same and reads better in screen readers.
 11. The tagline under the name grew from 0.66rem (10.6px) to 0.72rem (11.5px), above the 11px floor for readable text.
+12. Added a 404 page and a 1200x630 share image (public/og.jpg) in the same paper, ink and Georgia style. The mockup has neither.
 
 The Impeccable detector also flags the eyebrow kickers above every heading and the cream background. Both come from the mockup and stay, because Anna made the mockup the condition for the order.

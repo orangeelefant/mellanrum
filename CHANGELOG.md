@@ -13,3 +13,4 @@
 - SRI-hash på CMS-skriptet, X-Frame-Options och frame-ancestors.
 - Turnstile (~760 KiB) laddas när formuläret närmar sig.
 - Integritetssidan kompletterad enligt GDPR art. 13 (utom lagringstid).
+- DESIGN.md och TODO uppdaterade efter SEO-audit.
