@@ -83,7 +83,8 @@
       "Sexologi · KI",
       "Handledar- och lärarutbildning · SAPU",
       "Handledning & utbildning"
-    ]
+    ],
+    "registerUrl": "https://www.socialstyrelsen.se/statistik-och-data/register/halso-och-sjukvardspersonal/"
   },
   "pricing": {
     "eyebrow": "Priser",
@@ -94,7 +95,7 @@
         "title": "Psykoterapi",
         "price": "1 350 kr",
         "text": "Per samtal, 45 minuter.",
-        "note": "Samtal erbjuds i Stockholm och digitalt. Information om betalning och avbokning lämnas i samband med överenskommelse."
+        "note": "Samtal erbjuds i Stockholm och digitalt. Avbokning senast 24 timmar före samtalet, annars debiteras det."
       },
       {
         "title": "Verksamhetshandledning",
@@ -124,6 +125,7 @@
     ],
     "location": "Stockholm · samtal på plats och digitalt",
     "notice": "Skriv gärna kort i ditt första meddelande. Skicka inte känsliga personuppgifter eller detaljer om hälsa via formuläret eller vanlig e-post.",
+    "crisis": "Vid akut kris: ring 112. Sjukvårdsrådgivning: ring 1177. Självmordslinjen: ring 90101 eller chatta på mind.se.",
     "formHeading": "Skicka en förfrågan",
     "formNotice": "Meddelandet skickas direkt till min e-post och sparas inte på hemsidan.",
     "messagePlaceholder": "Skriv ett kort meddelande – undvik känsliga personuppgifter.",

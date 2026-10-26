@@ -149,3 +149,4 @@ Focus is a 2px clay-text outline with 3px offset. A skip link appears on focus. 
 The Impeccable detector also flags the eyebrow kickers above every heading and the cream background. Both come from the mockup and stay, because Anna made the mockup the condition for the order.
 13. The page title is "Legitimerad psykoterapeut i Stockholm | Mellanrum" (mockup: "Mellanrum | Psykoterapi, handledning & utbildning"), so the search result names the profession and the city.
 14. An optional "Boka tid" button appears in the hero and the contact column when Anna fills in a booking link in /admin. With the field empty the page matches the mockup.
+15. A crisis line (112, 1177, Självmordslinjen 90101) sits under the health-data notice in the contact column, with a 3px sage-dark rule on the left. Anna approved it 2026-10-26. The "Leg. psykoterapeut" tag links to Socialstyrelsen's HOSP register page.

@@ -17,3 +17,4 @@
 - Innehåll enligt Annas förlaga v2: sex tjänster, nya priser, KBT/PDT, sexologi och SAPU, varumärket Mellanrum
 - Bokningsknapp i hero och kontakt, styrs av fältet Bokning i /admin (dold när länken är tom)
 - Delningsbilden visar Mellanrum; DESIGN.md avvikelse 13-14 mot förlaga v2; pris 4 000 kr i CLAUDE.md
+- Krisrad i kontakt, Leg.-etiketten länkar till HOSP, avbokningsregel 24 h, lagringstid 12 mån på integritetssidan (Anna godkände 26/10)

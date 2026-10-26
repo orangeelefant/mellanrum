@@ -29,7 +29,7 @@ section{padding:78px 0}.section-head{max-width:680px;margin-bottom:35px}.service
 .price{font-family:var(--serif);font-size:1.7rem;margin:14px 0 10px}.price-note{font-size:.88rem;color:var(--muted)}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}.contact-panel{background:var(--white);padding:30px;border:1px solid var(--line)}
 label{display:block;font-size:.88rem;margin:0 0 6px}input,textarea{width:100%;padding:12px;border:1px solid var(--field);background:#fffefa;font:inherit;margin-bottom:15px;border-radius:0;color:var(--ink)}
-textarea{min-height:120px;resize:vertical}.notice{font-size:.85rem;color:var(--muted)}footer{padding:25px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.83rem}
+textarea{min-height:120px;resize:vertical}.notice{font-size:.85rem;color:var(--muted)}.crisis{font-size:.85rem;padding-left:12px;border-left:3px solid var(--sage-dark)}.tag a{color:inherit;text-underline-offset:3px}footer{padding:25px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.83rem}
 .footer-row{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
 .cf-turnstile{min-height:65px;margin:0 0 15px}
 /* avvikelse: tillgänglighet */

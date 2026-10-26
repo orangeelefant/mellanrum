@@ -81,6 +81,7 @@ collections:
                 label_singular: Etikett
                 widget: list
                 field: { name: tag, label: Etikett, widget: string }
+              - { name: registerUrl, label: Länk från etiketten "Leg." till Socialstyrelsens register, widget: string, required: false }
           - name: pricing
             label: Priser
             widget: object
@@ -110,6 +111,7 @@ collections:
                 field: { name: paragraph, label: Stycke, widget: text }
               - { name: location, label: Plats, widget: string }
               - { name: notice, label: Text om känsliga uppgifter, widget: text }
+              - { name: crisis, label: Rad om akut kris, widget: text }
               - { name: formHeading, label: Formulärets rubrik, widget: string }
               - { name: formNotice, label: Text ovanför formuläret, widget: text }
               - { name: messagePlaceholder, label: Exempeltext i meddelanderutan, widget: string }

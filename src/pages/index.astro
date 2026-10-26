@@ -74,7 +74,7 @@ const schema = {
     </div>
     <div><div class="eyebrow">{about.eyebrow}</div><h2>{about.heading}</h2>
       {about.paragraphs.map((p) => <p>{p}</p>)}
-      <ul class="credentials">{about.tags.map((tag) => <li class="tag">{tag}</li>)}</ul>
+      <ul class="credentials">{about.tags.map((tag) => <li class="tag">{tag.startsWith('Leg.') && about.registerUrl ? <a href={about.registerUrl} rel="noopener">{tag}</a> : tag}</li>)}</ul>
     </div>
   </div></section>
 
@@ -93,6 +93,7 @@ const schema = {
       <p><strong>Plats:</strong> {contact.location}</p>
       {booking.url && <p><a class="btn primary" href={booking.url} rel="noopener">{booking.label}</a></p>}
       <p class="notice">{contact.notice}</p>
+      <p class="crisis">{contact.crisis}</p>
     </div>
     <div class="contact-panel"><h3>{contact.formHeading}</h3>
       <p class="notice">{contact.formNotice}</p>
