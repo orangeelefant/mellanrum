@@ -5,7 +5,7 @@ import Base from '../layouts/Base.astro';
 import site from '../data/site.json';
 import { CONTACT_ENDPOINT, TURNSTILE_SITEKEY } from '../config';
 
-const { hero, services, about, pricing, contact } = site;
+const { hero, booking, services, about, pricing, contact } = site;
 
 // The CMS stores the image path as text; resolve it to the bundled asset by file name.
 const images = import.meta.glob<{ default: ImageMetadata }>('../assets/bilder/*.{jpg,jpeg,png,webp}', { eager: true });
@@ -44,7 +44,7 @@ const schema = {
     <div><div class="eyebrow">{hero.eyebrow}</div>
       <h1>{hero.heading}</h1>
       <p class="lead">{hero.lead}</p>
-      <div class="actions"><a class="btn primary" href="#kontakt">{hero.primaryButton}</a><a class="btn" href="#tjanster">{hero.secondaryButton}</a></div>
+      <div class="actions"><a class="btn primary" href="#kontakt">{hero.primaryButton}</a>{booking.url && <a class="btn" href={booking.url} rel="noopener">{booking.label}</a>}<a class="btn" href="#tjanster">{hero.secondaryButton}</a></div>
     </div>
     <div class="hero-art" role="img" aria-label="Abstrakt illustration i dämpade gröna och terrakottafärger"><div class="sun"></div><div class="arch"></div><div class="plant"></div><div class="art-caption">{hero.caption}</div></div>
   </div></section>
@@ -91,6 +91,7 @@ const schema = {
     <div><div class="eyebrow">{contact.eyebrow}</div><h2>{contact.heading}</h2>
       {contact.paragraphs.map((p) => <p>{p}</p>)}
       <p><strong>Plats:</strong> {contact.location}</p>
+      {booking.url && <p><a class="btn primary" href={booking.url} rel="noopener">{booking.label}</a></p>}
       <p class="notice">{contact.notice}</p>
     </div>
     <div class="contact-panel"><h3>{contact.formHeading}</h3>

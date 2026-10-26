@@ -40,6 +40,12 @@ collections:
               - { name: primaryButton, label: Knapp 1, widget: string }
               - { name: secondaryButton, label: Knapp 2, widget: string }
               - { name: caption, label: Text på illustrationen, widget: string }
+          - name: booking
+            label: Bokning
+            widget: object
+            fields:
+              - { name: url, label: Länk till bokningssidan, widget: string, required: false, hint: "Till exempel din sida på Bokadirekt. Lämna tomt så syns ingen bokningsknapp." }
+              - { name: label, label: Knapptext, widget: string }
           - name: services
             label: Tjänster
             widget: object

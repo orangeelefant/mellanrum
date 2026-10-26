@@ -15,3 +15,4 @@
 - Integritetssidan kompletterad enligt GDPR art. 13 (utom lagringstid).
 - DESIGN.md och TODO uppdaterade efter SEO-audit.
 - Innehåll enligt Annas förlaga v2: sex tjänster, nya priser, KBT/PDT, sexologi och SAPU, varumärket Mellanrum
+- Bokningsknapp i hero och kontakt, styrs av fältet Bokning i /admin (dold när länken är tom)

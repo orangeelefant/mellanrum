@@ -15,6 +15,10 @@
     "secondaryButton": "Läs om mina tjänster",
     "caption": "Utrymme för eftertanke och förändring."
   },
+  "booking": {
+    "url": "",
+    "label": "Boka tid"
+  },
   "services": {
     "eyebrow": "Vad jag erbjuder",
     "heading": "Olika vägar till större förståelse",
