@@ -82,6 +82,21 @@ collections:
                 widget: list
                 field: { name: tag, label: Etikett, widget: string }
               - { name: registerUrl, label: Länk från etiketten "Leg." till Socialstyrelsens register, widget: string, required: false }
+          - name: testimonials
+            label: Omdömen
+            widget: object
+            fields:
+              - { name: eyebrow, label: Liten rad ovanför rubriken, widget: string }
+              - { name: heading, label: Rubrik, widget: string }
+              - name: items
+                label: Omdömen
+                label_singular: Omdöme
+                widget: list
+                required: false
+                hint: "Bara med klientens skriftliga samtycke. Inget namn och inga detaljer om behandlingen. Utan omdömen syns inte avsnittet."
+                fields:
+                  - { name: quote, label: Omdöme, widget: text }
+                  - { name: source, label: Avsändare, widget: string, hint: "Till exempel Tidigare klient" }
           - name: pricing
             label: Priser
             widget: object

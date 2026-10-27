@@ -86,6 +86,11 @@
     ],
     "registerUrl": "https://www.socialstyrelsen.se/statistik-och-data/register/halso-och-sjukvardspersonal/"
   },
+  "testimonials": {
+    "eyebrow": "Omdömen",
+    "heading": "Det tidigare klienter säger",
+    "items": []
+  },
   "pricing": {
     "eyebrow": "Priser",
     "heading": "Tydlighet från början",

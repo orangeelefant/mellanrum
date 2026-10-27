@@ -5,7 +5,7 @@ import Base from '../layouts/Base.astro';
 import site from '../data/site.json';
 import { CONTACT_ENDPOINT, TURNSTILE_SITEKEY } from '../config';
 
-const { hero, booking, services, about, pricing, contact } = site;
+const { hero, booking, services, about, testimonials, pricing, contact } = site;
 
 // The CMS stores the image path as text; resolve it to the bundled asset by file name.
 const images = import.meta.glob<{ default: ImageMetadata }>('../assets/bilder/*.{jpg,jpeg,png,webp}', { eager: true });
@@ -77,6 +77,17 @@ const schema = {
       <ul class="credentials">{about.tags.map((tag) => <li class="tag">{tag.startsWith('Leg.') && about.registerUrl ? <a href={about.registerUrl} rel="noopener">{tag}</a> : tag}</li>)}</ul>
     </div>
   </div></section>
+
+  {testimonials.items.length > 0 && (
+    <section class="testimonials" id="omdomen"><div class="wrap">
+      <div class="section-head"><div class="eyebrow">{testimonials.eyebrow}</div><h2>{testimonials.heading}</h2></div>
+      <div class="testimonial-grid">
+        {testimonials.items.map((item) => (
+          <figure class="testimonial"><blockquote>“{item.quote}”</blockquote><figcaption>{item.source}</figcaption></figure>
+        ))}
+      </div>
+    </div></section>
+  )}
 
   <section class="pricing" id="priser"><div class="wrap">
     <div class="section-head"><div class="eyebrow">{pricing.eyebrow}</div><h2>{pricing.heading}</h2><p>{pricing.intro}</p></div>
