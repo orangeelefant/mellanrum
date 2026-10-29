@@ -6,7 +6,7 @@
   "workers_dev": true,
   "observability": { "enabled": false },
   "vars": {
-    "SITE_URL": "https://mellanrum-9ac.pages.dev",
+    "SITE_URL": "https://mellanrumpsykoterapi.se",
     "ALLOWED_HOSTS": "mellanrum-9ac.pages.dev,mellanrumpsykoterapi.se,www.mellanrumpsykoterapi.se",
     "FROM_ADDRESS": "formular@mellanrumpsykoterapi.se"
   },

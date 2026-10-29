@@ -8,7 +8,7 @@ backend:
 
 media_folder: src/assets/bilder
 public_folder: /src/assets/bilder
-site_url: https://mellanrum-9ac.pages.dev
+site_url: https://mellanrumpsykoterapi.se
 
 collections:
   - name: innehall

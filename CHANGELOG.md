@@ -20,3 +20,4 @@
 - Krisrad i kontakt, Leg.-etiketten länkar till HOSP, avbokningsregel 24 h, lagringstid 12 mån på integritetssidan (Anna godkände 26/10)
 - Psykoterapikortet har Annas text om KBT/PDT, trauma, ångest och depression samt präst- och sjuksköterskebakgrund.
 - Avsnittet Omdömen visas mellan Om mig och Priser när Anna lagt in omdömen i /admin, annars döljs det.
+- www.mellanrumpsykoterapi.se skickas med 301 till apex; /admin och formulärets återvägar använder domänen
