@@ -125,6 +125,7 @@ collections:
                 widget: list
                 field: { name: paragraph, label: Stycke, widget: text }
               - { name: location, label: Plats, widget: string }
+              - { name: email, label: "E-postadress (tom = visas inte)", widget: string, required: false }
               - { name: notice, label: Text om känsliga uppgifter, widget: text }
               - { name: crisis, label: Rad om akut kris, widget: text }
               - { name: formHeading, label: Formulärets rubrik, widget: string }

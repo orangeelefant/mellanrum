@@ -24,3 +24,4 @@
 - HSTS (1 år, underdomäner) nu när apex och www svarar över https
 - Logotypen (herografiken som symbol) i sidhuvudet bredvid namnet
 - Krediten byggd av Webraketen i sidfoten
+- kontakt@mellanrumpsykoterapi.se visas i kontaktavsnittet och i schema, redigerbar i /admin

@@ -139,7 +139,7 @@ Focus is a 2px clay-text outline with 3px offset. A skip link appears on focus. 
 2. Card numbers and nav hover use clay-text #9a5a42: the original clay measured 3.63:1.
 3. Input borders #c9cec5 became #8f8f86: the original measured 1.59:1, under the 3:1 minimum for form fields.
 4. Portrait added above the quote in "Om mig": Anna sent three photos and the mockup has no image.
-5. The e-mail line with a placeholder address is removed: the form sends to Anna, and she chose not to show an address.
+5. The e-mail line shows kontakt@mellanrumpsykoterapi.se (Email Routing to Anna's inbox) since 29/10, at her request. The mockup had a placeholder address. The field is optional in /admin; empty hides the line.
 6. The template notice above the form is replaced with a line saying the message goes straight to her and is not stored.
 7. The health-data notice mentions the form as well as e-mail.
 8. Footer links to a new privacy page (/integritet/), which the mockup left as a placeholder.

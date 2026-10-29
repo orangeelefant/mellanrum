@@ -23,6 +23,7 @@ const schema = {
   url: Astro.site?.href,
   description: site.meta.description,
   areaServed: 'Stockholm',
+  ...(contact.email && { email: contact.email }),
   address: { '@type': 'PostalAddress', addressLocality: 'Stockholm', addressCountry: 'SE' },
   founder: { '@type': 'Person', name: 'Anna Höglund', jobTitle: 'Legitimerad psykoterapeut' },
   makesOffer: pricing.items.map((item) => {
@@ -102,6 +103,7 @@ const schema = {
     <div><div class="eyebrow">{contact.eyebrow}</div><h2>{contact.heading}</h2>
       {contact.paragraphs.map((p) => <p>{p}</p>)}
       <p><strong>Plats:</strong> {contact.location}</p>
+      {contact.email && <p><strong>E-post:</strong> <a href={`mailto:${contact.email}`}>{contact.email}</a></p>}
       {booking.url && <p><a class="btn primary" href={booking.url} rel="noopener">{booking.label}</a></p>}
       <p class="notice">{contact.notice}</p>
       <p class="crisis">{contact.crisis}</p>
