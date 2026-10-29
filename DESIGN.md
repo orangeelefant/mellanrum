@@ -127,6 +127,8 @@ Container is min(1120px, 100% minus 40px). Sections are 78px top and bottom, 55p
 
 Buttons are 2px radius with a 1px sage-dark border; primary is filled. Service cards have a 1px line border. Price cards have a 3px sage-dark top border. The about section stacks the portrait (4:5, AVIF and WebP) above the quote block.
 
+The header brand is the logo symbol (public/logo.svg, 52px, 40px under 760px) beside the name and tagline. The symbol is the hero illustration drawn as a 256x256 SVG: arched sage tile, door within a door, sun and plant. Master files and the brand guide live outside the repo in work/projects/mellanrum/logo/.
+
 ## Accessibility
 
 Focus is a 2px clay-text outline with 3px offset. A skip link appears on focus. Smooth scrolling and button lift are off under prefers-reduced-motion. Form fields are required, labeled and length-limited.
@@ -151,3 +153,4 @@ The Impeccable detector also flags the eyebrow kickers above every heading and t
 14. An optional "Boka tid" button appears in the hero and the contact column when Anna fills in a booking link in /admin. With the field empty the page matches the mockup.
 15. A crisis line (112, 1177, Självmordslinjen 90101) sits under the health-data notice in the contact column, with a 3px sage-dark rule on the left. Anna approved it 2026-10-26. The "Leg. psykoterapeut" tag links to Socialstyrelsen's HOSP register page.
 16. A testimonials section ("Omdömen") sits between "Om mig" and "Priser" when Anna adds quotes in /admin. Sage cards like the about quote, two per row on desktop, one on mobile. With no quotes the section is not rendered and the page matches the mockup. The /admin hint requires written consent, no name and no treatment details.
+14. The header shows the logo symbol beside the name (Anna's request at the walkthrough 29/10). The mockup has text only. Under 760px the tagline tracking drops from 0.14em to 0.09em so it fits beside the symbol at 360px.
