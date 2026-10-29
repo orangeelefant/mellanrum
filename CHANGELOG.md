@@ -25,3 +25,4 @@
 - Logotypen (herografiken som symbol) i sidhuvudet bredvid namnet
 - Krediten byggd av Webraketen i sidfoten
 - kontakt@mellanrumpsykoterapi.se visas i kontaktavsnittet och i schema, redigerbar i /admin
+- BingSiteAuth.xml för Bing Webmaster Tools
