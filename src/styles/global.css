@@ -32,12 +32,12 @@ section{padding:78px 0}.section-head{max-width:680px;margin-bottom:35px}.service
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}.contact-panel{background:var(--white);padding:30px;border:1px solid var(--line)}
 label{display:block;font-size:.88rem;margin:0 0 6px}input,textarea{width:100%;padding:12px;border:1px solid var(--field);background:#fffefa;font:inherit;margin-bottom:15px;border-radius:0;color:var(--ink)}
 textarea{min-height:120px;resize:vertical}.notice{font-size:.85rem;color:var(--muted)}.crisis{font-size:.85rem;padding-left:12px;border-left:3px solid var(--sage-dark)}.tag a{color:inherit;text-underline-offset:3px}footer{padding:25px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.83rem}
-.footer-row{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.footer-row{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}.footer-links{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
 .cf-turnstile{min-height:65px;margin:0 0 15px}
 /* avvikelse: tillgänglighet */
 .skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:12px;background:var(--white);padding:8px 12px;z-index:10}
 a:focus-visible,.btn:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--clay-text);outline-offset:3px}
 .prose{max-width:680px}.prose h2{font-size:clamp(1.5rem,2.4vw,2rem);margin-top:40px}
-@media(max-width:760px){.nav{align-items:flex-start;flex-direction:column}.brand{gap:12px}.brand img{width:40px;height:40px}.brand small{letter-spacing:.09em}nav{gap:14px}.hero{padding:48px 0}.hero-grid,.split,.contact-grid{grid-template-columns:1fr;gap:32px}.hero-art{min-height:330px;order:-1}section{padding:55px 0}.cards,.price-grid{grid-template-columns:1fr}.card{min-height:0}nav a{padding:6px 0}}
+@media(max-width:760px){.nav{align-items:flex-start;flex-direction:column}.brand{gap:12px}.brand img{width:40px;height:40px}.brand small{letter-spacing:.09em}.footer-row{flex-direction:column;align-items:flex-start}nav{gap:14px}.hero{padding:48px 0}.hero-grid,.split,.contact-grid{grid-template-columns:1fr;gap:32px}.hero-art{min-height:330px;order:-1}section{padding:55px 0}.cards,.price-grid{grid-template-columns:1fr}.card{min-height:0}nav a{padding:6px 0}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}.btn:hover{transform:none}}
 .form-error{border:1px solid var(--clay-text);color:var(--clay-text);padding:10px 12px;font-size:.88rem}

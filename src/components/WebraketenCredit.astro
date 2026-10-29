@@ -1,0 +1,109 @@
+---
+/**
+ * Krediten i kundsajternas sidfot: kundmarkören ur Webraketens Arbetsyta
+ * (pekare + namnlapp) med texten "byggd av Webraketen" (engelska: "built by
+ * Webraketen", se lang).
+ *
+ * CANONICAL SOURCE: webraketen-starter-1. Kopieras till kundsajterna av
+ * ~/Claude/scripts/sync-webraketen-shared.sh; ändra här, inte i kopiorna.
+ * React-sajterna har en handkopia (missprint WebraketenCredit.tsx,
+ * kungalvs-kott-website WebraketenCredit.jsx) som ändras för hand.
+ *
+ * tone="neutral" (standard) ritar allt i sidfotens egen textfärg, så den har
+ * samma kontrast som texten runt omkring och krockar aldrig med kundens palett.
+ * tone="light" (vit 72 %) är för mörka sidfötter och tone="dark" (svart 65 %)
+ * för ljusa, när den ärvda textfärgen blir för stark eller för svag. Mät
+ * kontrasten mot sidfotens botten (minst 4,5:1).
+ * tone="green" är kundgrönt (#0d7a4c, 5,4:1 mot vit text) med egen bakgrund,
+ * för sidfötter där grönt inte slåss med kundens färger.
+ *
+ * Typsnittet är logons Funnel Sans när sidan redan har det, annars sajtens egen
+ * sans (--font-sans) och sist systemtypsnittet. Krediten laddar aldrig en egen
+ * webbfont. Lappen har padding och ram, så den sluter tätt om vilket typsnitt det blir.
+ *
+ * Grönt i tone="green" är ett medvetet undantag från Arbetsytas regel att grönt
+ * är kunden (webraketentwodotzero DESIGN.md, "Blue is us, green is you").
+ *
+ * Inga style=""-attribut: kundsajternas CSP tillåter bara hashade <style>-block,
+ * så all färg ligger i tonklasserna nedan.
+ */
+interface Props {
+  tone?: 'neutral' | 'light' | 'dark' | 'green'
+  /** utm_source. Standard: värdnamnet i astro.config `site`. */
+  source?: string
+  /** Språk på texten: sv "byggd av Webraketen", en "built by Webraketen".
+   *  Standard: Astro.currentLocale (om sajten har i18n), annars sv. Skicka
+   *  sidans lang när sajten har engelska sidor utan i18n-konfiguration. */
+  lang?: 'sv' | 'en'
+  /** För placering (marginaler, justering). Inte för färg, se tone. */
+  class?: string
+}
+const { tone = 'neutral', source, class: extra } = Astro.props
+const lang = Astro.props.lang ?? (Astro.currentLocale?.startsWith('en') ? 'en' : 'sv')
+const text = lang === 'en' ? 'built by Webraketen' : 'byggd av Webraketen'
+const utm = source ?? Astro.site?.hostname.replace(/^www\./, '') ?? 'kundsajt'
+const href = `https://webraketen.se/?utm_source=${encodeURIComponent(utm)}&utm_medium=referral&utm_campaign=kundkredit`
+---
+<a
+  href={href}
+  target="_blank"
+  rel="nofollow noopener"
+  lang={lang}
+  class:list={['wr-credit', `wr-credit--${tone}`, extra]}
+>
+  <svg class="wr-credit__cursor" viewBox="0 0 26 32" width="19" height="23" aria-hidden="true" focusable="false">
+    <path d="M3 3 L25 18.5 L14.8 20.4 L10 31 Z" />
+  </svg>
+  <span class="wr-credit__tag">{text}</span>
+</a>
+
+<style>
+  .wr-credit {
+    display: inline-flex;
+    align-items: flex-start;
+    min-height: 24px;
+    color: inherit;
+    text-decoration: none;
+    white-space: nowrap;
+    font: 600 12px/1 'Funnel Sans Variable', 'Funnel Sans', var(--font-sans, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif);
+    letter-spacing: 0.01em;
+    border-radius: 4px;
+  }
+  .wr-credit__cursor {
+    flex: none;
+    display: block;
+    fill: currentColor;
+    stroke: none;
+    stroke-linejoin: round;
+  }
+  .wr-credit__tag {
+    margin: 16px 0 0 -3px;
+    padding: 3px 7px 4px;
+    border: 1px solid currentColor;
+    border-radius: 0 6px 6px 6px;
+  }
+  .wr-credit--light {
+    color: rgb(255 255 255 / 0.72);
+  }
+  .wr-credit--dark {
+    color: rgb(0 0 0 / 0.65);
+  }
+  .wr-credit--green .wr-credit__cursor {
+    fill: #0d7a4c;
+    stroke: #fff;
+    stroke-width: 1.8;
+  }
+  .wr-credit--green .wr-credit__tag {
+    color: #fff;
+    background: #0d7a4c;
+    border-color: #0d7a4c;
+  }
+  .wr-credit:hover .wr-credit__tag {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .wr-credit:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+  }
+</style>
