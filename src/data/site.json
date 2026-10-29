@@ -71,7 +71,7 @@
     ],
     "tags": [
       "Leg. psykoterapeut",
-      "Sjuksköterska",
+      "Leg. Sjuksköterska",
       "Präst",
       "KBT & PDT",
       "Sexologi · KI",
@@ -94,7 +94,7 @@
         "title": "Psykoterapi",
         "price": "1 350 kr",
         "text": "Per samtal, 45 minuter.",
-        "note": "Samtal erbjuds i Stockholm och digitalt. Avbokning senast 24 timmar före samtalet, annars debiteras det."
+        "note": "Samtal erbjuds i Stockholm/Östermalm och digitalt. Avbokning senast 24 timmar före samtalet, annars debiteras fullt pris."
       },
       {
         "title": "Verksamhetshandledning",
@@ -104,15 +104,21 @@
       },
       {
         "title": "Handledning i psykoterapeutiskt arbete för steg 1-terapeuter",
-        "price": "1 900 kr exkl. moms",
+        "price": "1 500 kr exkl. moms",
         "text": "Per samtal, 50 minuter.",
-        "note": "Handledning med fokus på det psykoterapeutiska arbetet och utvecklingen i terapeutrollen."
+        "note": "Handledning med fokus på det psykoterapeutiska arbetet och utvecklingen i terapeutrollen. Handledning erbjuds i Stockholm på den handleddes mottagning alternativt digitalt. Avbokning senast 24 timmar före samtalet, annars debiteras fullt pris."
       },
       {
         "title": "Utbildning",
         "price": "Offert",
         "text": "Upplägg och pris anpassas efter innehåll, tidsåtgång och uppdragsgivarens behov.",
         "note": "Kontakta mig gärna för att diskutera ett uppdrag."
+      },
+      {
+        "title": "Samtalsstöd och coachande samtal",
+        "price": "1 100 kr exkl moms",
+        "text": "Per samtal, 45 minuter.",
+        "note": "Samtal erbjuds i Stockholm/Östermalm och digitalt. Avbokning senast 24 timmar före samtalet, annars debiteras fullt pris."
       }
     ]
   },
