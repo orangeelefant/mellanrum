@@ -27,7 +27,7 @@
       {
         "audience": "Privatpersoner",
         "title": "Psykoterapi",
-        "text": "Samtal för dig som vill förstå dig själv och dina relationer bättre, hantera livets svårigheter eller skapa förändring. Vi börjar där du befinner dig och utforskar tillsammans vad du behöver. Som leg. psykoterapeut, med inriktning KBT och PDT, har jag erfarenhet av bland annat behandling av trauma, PTSD, ångest och depression inom både primär- och specialistvård. Som präst och sjuksköterska har jag bred erfarenhet av att möta människor i olika livssituationer. Varmt välkommen!",
+        "text": "Samtal för dig som vill förstå dig själv och dina relationer bättre, hantera livets svårigheter eller skapa förändring. Vi börjar där du befinner dig och utforskar tillsammans vad du behöver hjälp med. Som leg. psykoterapeut, med inriktning KBT och PDT, har jag erfarenhet av bland annat behandling av trauma, PTSD, ångest och depression inom både primär- och specialistvård. Som präst och sjuksköterska har jag bred erfarenhet av att möta människor i olika livssituationer. Varmt välkommen!",
         "linkText": "Fråga om psykoterapi"
       },
       {
@@ -43,21 +43,15 @@
         "linkText": "Ta kontakt"
       },
       {
-        "audience": "Stress och prestation",
-        "title": "Mental förberedelse",
-        "text": "Stöd vid höga prestationskrav, stress och ovisshet – exempelvis för idrottare och andra som behöver förbereda sig mentalt inför krävande situationer. Jag har varit instruktör på Friskis & Svettis sedan 1998.",
-        "linkText": "Läs mer genom kontakt"
-      },
-      {
-        "audience": "Polis och polisutbildning",
-        "title": "Att fungera under press",
-        "text": "Samtal för dig som funderar på att söka polisutbildningen, studerar till polis eller arbetar som polis. Fokus kan vara stress, prestationskrav, mental förberedelse och att möta oförutsägbara situationer. Jag har genomgått polisutbildningen och har förståelse för utbildningens krav och frågor kring svåra besked, däribland dödsbud.",
+        "audience": "Chef, idrottare, polis och polisutbildning",
+        "title": "Mental förberedelse och att fungera under press",
+        "text": "Coachande samtal vid höga prestationskrav, stress och ovisshet – exempelvis för chefer, idrottare och andra som behöver förbereda sig mentalt inför krävande situationer. Jag har varit arbetsledare, chef, bitr. kyrkoherde samt gruppträningsinstruktör på Friskis & Svettis sedan 1998.\n\nSamtal för dig som funderar på att söka polisutbildningen, studerar till polis eller arbetar som polis. Fokus kan vara stress, prestationskrav, mental förberedelse och att möta oförutsägbara situationer. Jag har genomgått polisutbildningen vid Södertörns högskola och har förståelse för utbildningens krav och frågor kring svåra besked, däribland dödsbud.",
         "linkText": "Fråga om samtal"
       },
       {
         "audience": "Yrkesverksamma",
         "title": "Handledning och utbildning",
-        "text": "Jag erbjuder yrkeshandledning, verksamhetshandledning och handledning för steg 1-terapeuter som vill uppfylla behörighetskraven för att söka det legitimationsgrundande psykoterapeutprogrammet. Jag har genomgått handledar- och lärarutbildning i psykoterapi. Innehåll och upplägg anpassas efter uppdraget.",
+        "text": "Jag erbjuder yrkeshandledning, verksamhetshandledning och handledning för steg 1-terapeuter som vill uppfylla behörighetskraven för att söka det legitimationsgrundande psykoterapeutprogrammet. Jag har genomgått handledar- och lärarutbildning i psykoterapi vid Högskolan Sapu. Innehåll och upplägg anpassas efter uppdraget.",
         "linkText": "Prata om ett uppdrag"
       }
     ]
