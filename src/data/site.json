@@ -97,10 +97,10 @@
         "note": "Samtal erbjuds i Stockholm/Östermalm och digitalt. Avbokning senast 24 timmar före samtalet, annars debiteras fullt pris."
       },
       {
-        "title": "Verksamhetshandledning",
-        "price": "2 500 kr exkl. moms",
-        "text": "Per samtal, 50 minuter.",
-        "note": "Handledning för verksamheter och arbetsgrupper. Upplägg anpassas efter uppdragets behov."
+        "title": "Samtalsstöd och coachande samtal",
+        "price": "1 250 kr exkl moms",
+        "text": "Per samtal, 45 minuter.",
+        "note": "Samtal erbjuds i Stockholm/Östermalm och digitalt. Avbokning senast 24 timmar före samtalet, annars debiteras fullt pris."
       },
       {
         "title": "Handledning i psykoterapeutiskt arbete för steg 1-terapeuter",
@@ -109,16 +109,16 @@
         "note": "Handledning med fokus på det psykoterapeutiska arbetet och utvecklingen i terapeutrollen. Handledning erbjuds i Stockholm på den handleddes mottagning alternativt digitalt. Avbokning senast 24 timmar före samtalet, annars debiteras fullt pris."
       },
       {
+        "title": "Verksamhetshandledning",
+        "price": "2 600 kr exkl. moms",
+        "text": "Per samtal, 60 minuter.",
+        "note": "Handledning för verksamheter och arbetsgrupper. Upplägg anpassas efter uppdragets behov."
+      },
+      {
         "title": "Utbildning",
         "price": "Offert",
         "text": "Upplägg och pris anpassas efter innehåll, tidsåtgång och uppdragsgivarens behov.",
         "note": "Kontakta mig gärna för att diskutera ett uppdrag."
-      },
-      {
-        "title": "Samtalsstöd och coachande samtal",
-        "price": "1 100 kr exkl moms",
-        "text": "Per samtal, 45 minuter.",
-        "note": "Samtal erbjuds i Stockholm/Östermalm och digitalt. Avbokning senast 24 timmar före samtalet, annars debiteras fullt pris."
       }
     ]
   },
@@ -128,7 +128,7 @@
     "paragraphs": [
       "Du behöver inte veta exakt vad du vill säga från början. Skriv några rader om vad du undrar över, så tar vi det därifrån."
     ],
-    "location": "Stockholm · samtal på plats och digitalt",
+    "location": "Stockholm/Östermalm · samtal på plats och digitalt",
     "email": "kontakt@mellanrumpsykoterapi.se",
     "notice": "Skriv gärna kort i ditt första meddelande. Skicka inte känsliga personuppgifter eller detaljer om hälsa via formuläret eller vanlig e-post.",
     "crisis": "Vid akut kris: ring 112. Sjukvårdsrådgivning: ring 1177. Självmordslinjen: ring 90101 eller chatta på mind.se.",
