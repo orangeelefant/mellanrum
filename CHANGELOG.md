@@ -26,3 +26,4 @@
 - Krediten byggd av Webraketen i sidfoten
 - kontakt@mellanrumpsykoterapi.se visas i kontaktavsnittet och i schema, redigerbar i /admin
 - BingSiteAuth.xml för Bing Webmaster Tools
+- Tjänsternas text delas i stycken vid radbrytning (Annas önskemål 29/10)

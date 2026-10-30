@@ -60,7 +60,7 @@ collections:
                 fields:
                   - { name: audience, label: För vem, widget: string }
                   - { name: title, label: Rubrik, widget: string }
-                  - { name: text, label: Text, widget: text }
+                  - { name: text, label: "Text (ny rad = nytt stycke)", widget: text }
                   - { name: linkText, label: Länktext, widget: string }
           - name: about
             label: Om mig

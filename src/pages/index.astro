@@ -57,7 +57,7 @@ const schema = {
         <article class="card">
           <div class="num">{String(i + 1).padStart(2, '0')} / {item.audience}</div>
           <h3>{item.title}</h3>
-          <p>{item.text}</p>
+          {item.text.split(/\n+/).map((t) => t.trim()).filter(Boolean).map((t) => <p>{t}</p>)}
           <a href="#kontakt">{item.linkText} →</a>
         </article>
       ))}
