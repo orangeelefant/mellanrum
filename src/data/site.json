@@ -92,15 +92,15 @@
     "items": [
       {
         "title": "Psykoterapi",
-        "price": "1 350 kr (studerande med Mecenatkort samt unga vuxna 18-25 år betalar 990 kr)",
+        "price": "1 350 kr",
         "text": "Per samtal, 45 minuter.",
-        "note": "Samtal erbjuds i Stockholm/Östermalm och digitalt. Avbokning senast 24 timmar före samtalet, annars debiteras fullt pris."
+        "note": "Samtal erbjuds i Stockholm/Östermalm och digitalt. Studerande med Mecenatkort samt unga vuxna 18-25 år betalar 990 kr. \nAvbokning senast 24 timmar före samtalet, annars debiteras fullt pris."
       },
       {
         "title": "Samtalsstöd och coachande samtal",
         "price": "1 250 kr exkl moms",
         "text": "Per samtal, 45 minuter.",
-        "note": "Samtal erbjuds i Stockholm/Östermalm och digitalt. Avbokning senast 24 timmar före samtalet, annars debiteras fullt pris."
+        "note": "Samtal erbjuds i Stockholm/Östermalm och digitalt. Studerande med Mecenatkort samt unga vuxna 18-25 år betalar 890 kr exkl moms. \nAvbokning senast 24 timmar före samtalet, annars debiteras fullt pris."
       },
       {
         "title": "Handledning i psykoterapeutiskt arbete för steg 1-terapeuter",
