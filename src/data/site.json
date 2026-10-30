@@ -83,7 +83,16 @@
   "testimonials": {
     "eyebrow": "Omdömen",
     "heading": "Det tidigare klienter säger",
-    "items": []
+    "items": [
+      {
+        "quote": "Jag känner mig hörd och att mina känslor och tankar inte förminskas. Känner mig trygg.",
+        "source": "Tidigare klient"
+      },
+      {
+        "quote": "Anna är väldigt rak och insiktsfull i kommunikationen, för mig som behöver en mer bestämdhet så passar det väl in i dialogen.",
+        "source": "Tidigare klient"
+      }
+    ]
   },
   "pricing": {
     "eyebrow": "Priser",
