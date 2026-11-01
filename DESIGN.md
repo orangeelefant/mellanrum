@@ -154,4 +154,4 @@ The Impeccable detector also flags the eyebrow kickers above every heading and t
 15. A crisis line (112, 1177, Självmordslinjen 90101) sits under the health-data notice in the contact column, with a 3px sage-dark rule on the left. Anna approved it 2026-10-26. The "Leg. psykoterapeut" tag links to Socialstyrelsen's HOSP register page.
 16. A testimonials section ("Omdömen") sits between "Om mig" and "Priser" when Anna adds quotes in /admin. Sage cards like the about quote, two per row on desktop, one on mobile. With no quotes the section is not rendered and the page matches the mockup. The /admin hint requires written consent, no name and no treatment details.
 14. The header shows the logo symbol beside the name (Anna's request at the walkthrough 29/10). The mockup has text only. Under 760px the tagline tracking drops from 0.14em to 0.09em so it fits beside the symbol at 360px.
-15. The footer carries the Webraketen credit (src/components/WebraketenCredit.astro, synced from webraketen-starter-1, tone neutral in the muted footer colour). Under 760px the footer stacks.
+15. The footer has no Webraketen credit (Anna's choice 30/10). Under 760px the footer stacks.

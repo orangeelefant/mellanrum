@@ -1,7 +1,6 @@
 ---
 import '../styles/global.css';
 import site from '../data/site.json';
-import WebraketenCredit from '../components/WebraketenCredit.astro';
 
 interface Props {
   title?: string;
@@ -56,6 +55,6 @@ const nav = [
 <main id="top"><div id="innehall"></div>
   <slot />
 </main>
-<footer><div class="wrap footer-row"><span>© {new Date().getFullYear()} {site.brand.name}</span><span class="footer-links"><a href="/integritet/">Integritet</a><WebraketenCredit /></span></div></footer>
+<footer><div class="wrap footer-row"><span>© {new Date().getFullYear()} {site.brand.name}</span><span class="footer-links"><a href="/integritet/">Integritet</a></span></div></footer>
 </body>
 </html>
