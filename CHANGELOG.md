@@ -28,3 +28,4 @@
 - BingSiteAuth.xml för Bing Webmaster Tools
 - Tjänsternas text delas i stycken vid radbrytning (Annas önskemål 29/10)
 - Krediten i sidfoten borttagen (Annas val 30/10)
+- docs(todo): pass 2, 3 rader klara, 4 kräver Anna
