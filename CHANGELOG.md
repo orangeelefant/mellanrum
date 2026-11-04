@@ -30,3 +30,4 @@
 - Krediten i sidfoten borttagen (Annas val 30/10)
 - docs(todo): pass 2, 3 rader klara, 4 kräver Anna
 - TODO: audit-raden avbockad, Annas återstående frågor på egen rad.
+- Kontaktworkern visar sidans felbesked när Turnstile-kontrollen inte svarar, och har tester (npm test).

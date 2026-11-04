@@ -30,14 +30,20 @@ export default {
       return Response.redirect(`${back}/?fel=uppgifter#kontakt`, 303);
     }
 
-    const verify = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
-      method: 'POST',
-      body: new URLSearchParams({
-        secret: env.TURNSTILE_SECRET,
-        response: String(form.get('cf-turnstile-response') ?? ''),
-        remoteip: request.headers.get('CF-Connecting-IP') ?? '',
-      }),
-    }).then((r) => r.json());
+    // Ett nätverksfel eller ett svar som inte är JSON ger sidans felbesked i stället för Cloudflares felsida.
+    let verify;
+    try {
+      verify = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+        method: 'POST',
+        body: new URLSearchParams({
+          secret: env.TURNSTILE_SECRET,
+          response: String(form.get('cf-turnstile-response') ?? ''),
+          remoteip: request.headers.get('CF-Connecting-IP') ?? '',
+        }),
+      }).then((r) => r.json());
+    } catch {
+      return Response.redirect(`${back}/?fel=skicka#kontakt`, 303);
+    }
     if (!verify.success) return Response.redirect(`${back}/?fel=kontroll#kontakt`, 303);
 
     try {
