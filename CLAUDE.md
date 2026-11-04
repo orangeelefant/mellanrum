@@ -10,8 +10,8 @@ Anna Höglund's one-page site for psychotherapy, supervision and training in Sto
 - No cookies, no analytics, system fonts.
 
 ## Commands
-- `npm run dev` / `npm run build` / `npm run preview`
-- Worker: `cd worker && npx wrangler deploy` with `CLOUDFLARE_API_TOKEN=$CLOUDFLARE_MELLANRUM_TOKEN` and `CLOUDFLARE_API_KEY`/`CLOUDFLARE_EMAIL` unset (the global key points at another account). Secret `TURNSTILE_SECRET`. URL https://mellanrum-kontakt.mellanrum-hoglund.workers.dev.
+- `npm run dev` / `npm run build` / `npm run preview` / `npm test` (Worker, no network)
+- Worker: `cd worker && npx wrangler deploy` with `CLOUDFLARE_API_TOKEN=$CLOUDFLARE_MELLANRUM_TOKEN`, `CLOUDFLARE_ACCOUNT_ID=7b54f66e2589fa8ebaba4496dcc765dd` (the shell's default account ID is another account) and `CLOUDFLARE_API_KEY`/`CLOUDFLARE_EMAIL` unset (the global key points at another account). Secret `TURNSTILE_SECRET`. URL https://mellanrum-kontakt.mellanrum-hoglund.workers.dev.
 
 ## Rules
 - The mockup (`docs/forlaga.html`) is the spec. Any visual deviation goes in the list at the end of `DESIGN.md`.

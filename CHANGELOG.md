@@ -32,3 +32,4 @@
 - TODO: audit-raden avbockad, Annas återstående frågor på egen rad.
 - Kontaktworkern visar sidans felbesked när Turnstile-kontrollen inte svarar, och har tester (npm test).
 - Kontaktformuläret skickas först när skräppostkontrollen är klar, så ett långt meddelande inte försvinner med ett felbesked.
+- CLAUDE.md anger konto-ID för Worker-deployen och npm test.
