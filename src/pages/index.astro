@@ -145,11 +145,20 @@ const schema = {
       kontroll: 'Kontrollen mot skräppost gick inte igenom. Försök igen.',
       skicka: 'Meddelandet kunde inte skickas just nu. Försök igen om en stund.',
     };
-    const reason = reasons[new URLSearchParams(location.search).get('fel')];
-    if (reason) {
+    const showReason = (text) => {
       const el = document.getElementById('form-error');
-      el.textContent = reason;
+      el.textContent = text;
       el.hidden = false;
-    }
+    };
+    const reason = reasons[new URLSearchParams(location.search).get('fel')];
+    if (reason) showReason(reason);
+    // Utan Turnstile-svar skulle Workern skicka tillbaka till en tom sida och texten vore borta.
+    // Formuläret skickas därför först när kontrollen är klar.
+    document.querySelector('#kontakt form').addEventListener('submit', (e) => {
+      if (!e.target.querySelector('[name="cf-turnstile-response"]')?.value) {
+        e.preventDefault();
+        showReason('Kontrollen mot skräppost är inte klar än. Vänta några sekunder och tryck på Skicka igen.');
+      }
+    });
   </script>
 </Base>
