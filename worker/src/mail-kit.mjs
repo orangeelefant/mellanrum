@@ -211,7 +211,9 @@ export function agarnotis({ tema: tm, lead, etiketter = {}, rubrik = 'Ny förfr�
 
 // ---------- 2. Bekräftelse till den som skickade ----------
 // kund: { namn, epost }, sammanfattning: { fält som visas }, tjanst, ref, steg: [valfria egna steg]
-export function bekraftelse({ tema: tm, kund, tjanst, vad, sammanfattning = {}, ref, steg, etiketter = {}, knappar: lankar = [] }) {
+// lofte: eget löfte för en leverans eller ett beslut ("Du får analysen inom 24 timmar."). Utan lofte lovas svar inom en arbetsdag.
+// stycken: fria stycken efter stegen, t.ex. villkor.
+export function bekraftelse({ tema: tm, kund, tjanst, vad, sammanfattning = {}, ref, steg, etiketter = {}, knappar: lankar = [], lofte, stycken = [] }) {
   const t = tema(tm);
   const o = L(t);
   vad = vad || (t.lang === 'en' ? 'request' : 'förfrågan');
@@ -219,21 +221,23 @@ export function bekraftelse({ tema: tm, kund, tjanst, vad, sammanfattning = {}, 
   const tel = sv.telefon(t.phone);
   const om = tjanst ? (t.lang === 'en' ? ` about ${tjanst.toLowerCase()}` : ` ${vad === 'beställning' ? 'av' : 'om'} ${tjanst.toLowerCase()}`) : '';
   const subject = `${o.fatt(vad, om)} · ${t.name}`;
-  const preheader = o.svarPre(o.svarstid);
+  const preheader = lofte || o.svarPre(o.svarstid);
   const lista = steg || o.steg(tel?.vis);
+  const huvud = lofte ? `${o.fatt(vad, om)}. ${lofte}` : `${o.fatt(vad, om)} ${o.svarar} ${o.svarstid}.`;
   const sam = rader(sammanfattning, etiketter);
   const rub = fornamn ? `${o.tack}, ${esc(fornamn)}` : o.tackFor(vad);
   const innehall = [
     h1(t, rub),
-    p(t, `${o.fatt(vad, esc(om))} ${o.svarar} <strong>${o.svarstid}</strong>.`),
+    p(t, lofte ? `${o.fatt(vad, esc(om))}. ${esc(lofte)}` : `${o.fatt(vad, esc(om))} ${o.svarar} <strong>${o.svarstid}</strong>.`),
     h2(t, o.sa),
     `<table role="presentation" cellpadding="0" cellspacing="0" style="margin:4px 0 4px">${lista.map((x, i) => `<tr><td valign="top" style="padding:6px 12px 6px 0"><span style="display:inline-block;width:24px;height:24px;line-height:24px;border-radius:12px;background:${t.brand};color:${t.onBrand};font-size:13px;font-weight:700;text-align:center">${i + 1}</span></td><td class="wr-ink" style="padding:7px 0;color:${t.ink}">${esc(x)}</td></tr>`).join('')}</table>`,
     lankar.length ? knappar(t, lankar) : '',
+    ...stycken.map((x) => p(t, esc(x))),
     sam.length ? h2(t, o.skickade) + tabell(t, sam) : '',
     p(t, `<br>${o.andra}${tel ? ` ${o.ring} <a href="${tel.href}" style="color:${t.brand}">${tel.vis}</a>` : ''}.`),
   ].join('');
   const fot = kontaktFot(t, `${o.varfor(vad, t.web || t.name)}${ref ? ` (${o.arende} ${ref})` : ''}.`);
-  const text = [fornamn ? `${o.tack}, ${fornamn}` : o.tackFor(vad), '', `${o.fatt(vad, om)} ${o.svarar} ${o.svarstid}.`, '', `${o.sa}:`, ...lista.map((x, i) => `${i + 1}. ${x}`), ...lankar.map((k) => `${k.text}: ${k.href}`), sam.length ? `\n${o.skickade}:\n${textRader(sam)}` : '', '', `${o.andra}${tel ? ` ${o.ring} ${tel.vis}` : ''}.`, '', textFot(t)].join('\n');
+  const text = [fornamn ? `${o.tack}, ${fornamn}` : o.tackFor(vad), '', huvud, '', `${o.sa}:`, ...lista.map((x, i) => `${i + 1}. ${x}`), ...lankar.map((k) => `${k.text}: ${k.href}`), ...stycken.flatMap((x) => ['', x]), sam.length ? `\n${o.skickade}:\n${textRader(sam)}` : '', '', `${o.andra}${tel ? ` ${o.ring} ${tel.vis}` : ''}.`, '', textFot(t)].join('\n');
   return { subject, preheader, html: skal(t, { subject, preheader, innehall, fot }), text, replyTo: t.email || undefined, headers: {} };
 }
 

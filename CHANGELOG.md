@@ -36,3 +36,4 @@
 - CLAUDE.md anger konto-ID för Worker-deployen och npm test.
 - Kontaktformulärets mejl till Anna byggs med mejlkitet
 - Mejlkitet uppdaterat: rätt etiketter för fält med prototypnamn, knappar i kvitto och utskick
+- Mejlkitet uppdaterat: rätt etiketter för fält med prototypnamn, knappar i kvitto och utskick
