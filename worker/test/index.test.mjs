@@ -3,12 +3,13 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import worker from '../src/index.js';
 
+const sent = [];
 const env = {
   SITE_URL: 'https://mellanrumpsykoterapi.se',
   ALLOWED_HOSTS: 'mellanrumpsykoterapi.se',
   FROM_ADDRESS: 'formular@mellanrumpsykoterapi.se',
   TURNSTILE_SECRET: 'test',
-  EMAIL: { send: async () => {} },
+  EMAIL: { send: async (m) => { sent.push(m); } },
 };
 const post = () => new Request('https://w.example/', {
   method: 'POST',
@@ -33,4 +34,18 @@ test('godkänd kontroll skickar och går till /tack/', async () => {
   globalThis.fetch = async () => Response.json({ success: true });
   const res = await worker.fetch(post(), env);
   assert.match(res.headers.get('location'), /\/tack\/$/);
+});
+
+test('mejlet byggs med mejlkitet: ämne, html, text, reply-to och inga kopior', async () => {
+  sent.length = 0;
+  globalThis.fetch = async () => Response.json({ success: true });
+  await worker.fetch(post(), env);
+  const [m] = sent;
+  assert.match(m.subject, /^Ny förfrågan: Anna/);
+  assert.match(m.html, /Hej/);
+  assert.match(m.text, /Hej/);
+  assert.deepEqual(m.replyTo, { email: 'a@example.se', name: 'Anna' });
+  assert.equal(m.bcc, undefined);
+  assert.equal(m.cc, undefined);
+  assert.equal(sent.length, 1);
 });

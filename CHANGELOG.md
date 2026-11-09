@@ -1,6 +1,7 @@
 # Changelog
 
 ## [Unreleased]
+- Kontaktformulärets mejl till Anna byggs med mejlkitet (`worker/src/mail-kit.mjs`, tema `worker/src/mail-theme.mjs`, logga `public/mail/logo.png`): HTML och text, ämne "Ny förfrågan: namn", tidsstämpel och svarsknapp. Inget kvitto till besökaren. Workern måste deployas för att ändringen ska gälla.
 - Första versionen: startsida efter Annas förlaga, porträtt, integritetssida, tacksida, sitemap, robots.txt och llms.txt.
 - Sveltia CMS på /admin för texter, priser och porträtt.
 - Kontaktformulär via Worker med Turnstile och send_email, inget sparas.
@@ -33,3 +34,4 @@
 - Kontaktworkern visar sidans felbesked när Turnstile-kontrollen inte svarar, och har tester (npm test).
 - Kontaktformuläret skickas först när skräppostkontrollen är klar, så ett långt meddelande inte försvinner med ett felbesked.
 - CLAUDE.md anger konto-ID för Worker-deployen och npm test.
+- Kontaktformulärets mejl till Anna byggs med mejlkitet

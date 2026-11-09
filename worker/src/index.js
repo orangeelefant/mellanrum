@@ -1,6 +1,9 @@
 // Receives the contact form as a plain HTML POST, checks Turnstile, e-mails Anna and redirects the visitor.
 // The message only lives in memory for the duration of the request: no storage, no logging of content.
 
+import { agarnotis } from './mail-kit.mjs';
+import TEMA from './mail-theme.mjs';
+
 const LIMITS = { name: 120, email: 200, message: 3000 };
 
 export default {
@@ -46,13 +49,16 @@ export default {
     }
     if (!verify.success) return Response.redirect(`${back}/?fel=kontroll#kontakt`, 303);
 
+    // Inget kvitto till besökaren: ett kvitto i inkorgen kan avslöja att personen sökt psykoterapi.
+    const notis = agarnotis({ tema: TEMA, lead: { namn: name, epost: email, meddelande: message, sida: site } });
     try {
       await env.EMAIL.send({
         to: 'anna.b.hoglund@gmail.com',
         from: { email: env.FROM_ADDRESS, name: 'Mellanrum, kontaktformulär' },
         replyTo: { email, name },
-        subject: `Ny förfrågan från ${name}`,
-        text: `Namn: ${name}\nE-post: ${email}\n\n${message}\n\nSvara direkt på det här mejlet för att svara ${name}.`,
+        subject: notis.subject.replace(/[\r\n]+/g, ' '),
+        text: notis.text,
+        html: notis.html,
       });
     } catch (e) {
       console.log('send failed', e.code);
