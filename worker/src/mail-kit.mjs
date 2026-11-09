@@ -83,8 +83,9 @@ const ISO = /^\d{4}-\d{2}-\d{2}(T[\d:.]+Z?)?$/;
 
 function etikett(nyckel, egna) {
   const k = nyckel.toLowerCase().replace(/[^a-zåäö0-9]/g, '');
-  if (egna?.[nyckel]) return egna[nyckel];
-  if (ETIKETTER[k]) return ETIKETTER[k];
+  // Object.hasOwn: ett formulärfält som heter constructor eller toString får aldrig Object-prototypens funktion.
+  if (egna && Object.hasOwn(egna, nyckel)) return egna[nyckel];
+  if (Object.hasOwn(ETIKETTER, k)) return ETIKETTER[k];
   console.warn(`[mail-kit] okänd fältnyckel "${nyckel}", lägg till en etikett`);
   const ord = nyckel.replace(/([a-zåäö])([A-ZÅÄÖ])/g, '$1 $2').replace(/[-_]+/g, ' ').trim().toLowerCase();
   return ord.charAt(0).toUpperCase() + ord.slice(1);
@@ -96,7 +97,7 @@ function varde(nyckel, v) {
   if (TOM.has(s.toLowerCase())) return null;
   const k = nyckel.toLowerCase();
   if (ISO.test(s)) return s.length > 10 ? sv.tid(s) : sv.datum(s);
-  if (VARDEN[s.toLowerCase()]) return VARDEN[s.toLowerCase()];
+  if (Object.hasOwn(VARDEN, s.toLowerCase())) return VARDEN[s.toLowerCase()];
   if (/yta|size|kvm/.test(k)) {
     const m = s.match(/^(under|over|över)?-?(\d+)(?:-(\d+))?$/i);
     if (m) return m[3] ? `${m[2]}–${m[3]} m²` : `${m[1] ? (m[1].toLowerCase() === 'under' ? 'Under ' : 'Över ') : ''}${m[2]} m²`;
@@ -210,7 +211,7 @@ export function agarnotis({ tema: tm, lead, etiketter = {}, rubrik = 'Ny förfr�
 
 // ---------- 2. Bekräftelse till den som skickade ----------
 // kund: { namn, epost }, sammanfattning: { fält som visas }, tjanst, ref, steg: [valfria egna steg]
-export function bekraftelse({ tema: tm, kund, tjanst, vad, sammanfattning = {}, ref, steg, etiketter = {} }) {
+export function bekraftelse({ tema: tm, kund, tjanst, vad, sammanfattning = {}, ref, steg, etiketter = {}, knappar: lankar = [] }) {
   const t = tema(tm);
   const o = L(t);
   vad = vad || (t.lang === 'en' ? 'request' : 'förfrågan');
@@ -227,11 +228,12 @@ export function bekraftelse({ tema: tm, kund, tjanst, vad, sammanfattning = {}, 
     p(t, `${o.fatt(vad, esc(om))} ${o.svarar} <strong>${o.svarstid}</strong>.`),
     h2(t, o.sa),
     `<table role="presentation" cellpadding="0" cellspacing="0" style="margin:4px 0 4px">${lista.map((x, i) => `<tr><td valign="top" style="padding:6px 12px 6px 0"><span style="display:inline-block;width:24px;height:24px;line-height:24px;border-radius:12px;background:${t.brand};color:${t.onBrand};font-size:13px;font-weight:700;text-align:center">${i + 1}</span></td><td class="wr-ink" style="padding:7px 0;color:${t.ink}">${esc(x)}</td></tr>`).join('')}</table>`,
+    lankar.length ? knappar(t, lankar) : '',
     sam.length ? h2(t, o.skickade) + tabell(t, sam) : '',
     p(t, `<br>${o.andra}${tel ? ` ${o.ring} <a href="${tel.href}" style="color:${t.brand}">${tel.vis}</a>` : ''}.`),
   ].join('');
   const fot = kontaktFot(t, `${o.varfor(vad, t.web || t.name)}${ref ? ` (${o.arende} ${ref})` : ''}.`);
-  const text = [fornamn ? `${o.tack}, ${fornamn}` : o.tackFor(vad), '', `${o.fatt(vad, om)} ${o.svarar} ${o.svarstid}.`, '', `${o.sa}:`, ...lista.map((x, i) => `${i + 1}. ${x}`), sam.length ? `\n${o.skickade}:\n${textRader(sam)}` : '', '', `${o.andra}${tel ? ` ${o.ring} ${tel.vis}` : ''}.`, '', textFot(t)].join('\n');
+  const text = [fornamn ? `${o.tack}, ${fornamn}` : o.tackFor(vad), '', `${o.fatt(vad, om)} ${o.svarar} ${o.svarstid}.`, '', `${o.sa}:`, ...lista.map((x, i) => `${i + 1}. ${x}`), ...lankar.map((k) => `${k.text}: ${k.href}`), sam.length ? `\n${o.skickade}:\n${textRader(sam)}` : '', '', `${o.andra}${tel ? ` ${o.ring} ${tel.vis}` : ''}.`, '', textFot(t)].join('\n');
   return { subject, preheader, html: skal(t, { subject, preheader, innehall, fot }), text, replyTo: t.email || undefined, headers: {} };
 }
 
@@ -339,15 +341,17 @@ export function inloggning({ tema: tm, url, giltigMinuter = 15, epost, bekrafta 
 
 // ---------- 7. Utskick (första kontakt, uppföljning, pressmeddelande) ----------
 // Enkel och personlig: ingen logga, inget kort. Ämnet får aldrig börja med Sv:, Re: eller Fwd: vid första kontakt.
-export function utskick({ tema: tm, amne, stycken = [], avsandare, avregUrl, avregMailto }) {
+// knappar: [{ text, href }] visas som länkar under texten (t.ex. Läs hela, Ja, Nej, Öppna flyttplanen).
+export function utskick({ tema: tm, amne, stycken = [], avsandare, avregUrl, avregMailto, knappar: lankar = [] }) {
   const t = tema(tm);
   if (/^(sv|re|fwd?|vb)\s*:/i.test(amne)) throw new Error(`[mail-kit] utskicksämnet "${amne}" ser ut som ett svar`);
   const subject = amne;
   const preheader = stycken[0]?.slice(0, 110) || '';
   const sign = [avsandare.namn, avsandare.roll && `${avsandare.roll}, ${t.name}`, sv.telefon(avsandare.telefon || t.phone)?.vis, t.web].filter(Boolean);
-  const innehall = stycken.map((s) => `<p style="margin:0 0 16px">${nl2br(s)}</p>`).join('') + `<p style="margin:24px 0 0">${sign.map(esc).join('<br>')}</p>`;
+  const lank = lankar.map((k) => `<p style="margin:0 0 12px"><a href="${esc(k.href)}" style="color:${t.brand};font-weight:600">${esc(k.text)}</a></p>`).join('');
+  const innehall = stycken.map((s) => `<p style="margin:0 0 16px">${nl2br(s)}</p>`).join('') + lank + `<p style="margin:24px 0 0">${sign.map(esc).join('<br>')}</p>`;
   const fot = avregUrl ? L(t).avreg(esc(avregUrl), t.muted) : '';
-  const text = [...stycken, '', ...sign, '', avregUrl ? `${L(t).avregText}: ${avregUrl}` : ''].join('\n\n').replace(/\n{3,}/g, '\n\n');
+  const text = [...stycken, ...lankar.map((k) => `${k.text}: ${k.href}`), '', ...sign, '', avregUrl ? `${L(t).avregText}: ${avregUrl}` : ''].join('\n\n').replace(/\n{3,}/g, '\n\n');
   const headers = avregUrl ? { 'List-Unsubscribe': `<${avregUrl}>${avregMailto ? `, <mailto:${avregMailto}>` : ''}`, 'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click' } : {};
   return { subject, preheader, html: skal({ ...t, bg: t.surface }, { subject, preheader, innehall, fot, enkel: true }), text, replyTo: t.email || undefined, headers };
 }
