@@ -1,8 +1,7 @@
 # Agent instructions
 
-- Read `CLAUDE.md` and `DESIGN.md` before any change.
-- Run `npm run build` before every push. Push to `main`; the GitHub Action deploys to Cloudflare Pages.
-- Every change to behavior, copy, config or dependencies adds a line under `[Unreleased]` in `CHANGELOG.md` in the same commit.
-- Secrets (Cloudflare token, Turnstile secret, GitHub OAuth secret) live in GitHub Actions secrets or Worker secrets, never in the repo.
+- Read `CLAUDE.md` and `DESIGN.md` before each change.
+- Before each push, run `npm run build`. Push to `main`. The GitHub Action deploys to Cloudflare Pages.
+- Each change to behavior, copy, config or dependencies adds one line under `[Unreleased]` in `CHANGELOG.md`. Put it in the same commit.
+- Keep secrets (Cloudflare token, Turnstile secret, GitHub OAuth secret) in GitHub Actions secrets or Worker secrets. Never put them in the repo.
 - The contact Worker must never store or log message content.
-

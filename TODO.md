@@ -1,24 +1,24 @@
-# TODO
+# Task list
 
 ## Now
-- [x] Sveltia CMS Authenticator + GitHub OAuth-app, fyll i `base_url` _Avbockad 2026-11-02: base_url i admin/config.yml, CMS-commits Update Hemsidans innehåll 3 dagar gamla._
+- [x] Sveltia CMS Authenticator and GitHub OAuth app. Fill in `base_url`. _Checked 2026-11-02: `base_url` is in admin/config.yml. The CMS commits "Update Hemsidans innehåll" are 3 days old._
 
 ## Next
-- [x] Anna byter namnservrar hos Loopia till houston.ns.cloudflare.com och kami.ns.cloudflare.com _Avbockad 2026-11-02: dig NS mellanrumpsykoterapi.se svarar houston och kami.ns.cloudflare.com._
-- [x] Egen domän på Pages-projektet, ta bort noindex för pages.dev-värdar (sker automatiskt via _headers) _Avbockad 2026-11-02: mellanrumpsykoterapi.se svarar 200 utan noindex, www går till apex._
+- [x] Anna changes the nameservers at Loopia to houston.ns.cloudflare.com and kami.ns.cloudflare.com. _Checked 2026-11-02: dig NS mellanrumpsykoterapi.se answers houston and kami.ns.cloudflare.com._
+- [x] Own domain on the Pages project. Remove noindex for pages.dev hosts (happens automatically through _headers). _Checked 2026-11-02: mellanrumpsykoterapi.se answers 200 without noindex. www goes to the apex._
 
 
 ## Later
 
 ## Done (recent)
-- [x] API-token i Annas konto, Pages-projekt (mellanrum-9ac.pages.dev), Actions-secrets
-- [x] Turnstile-widget, Worker mellanrum-kontakt.mellanrum-hoglund.workers.dev, src/config.ts ifylld
-- [x] Zon mellanrumpsykoterapi.se skapad (NS houston/kami.ns.cloudflare.com), väntar på NS-byte hos Loopia
+- [x] API token in Anna's account, Pages project (mellanrum-9ac.pages.dev), Actions secrets
+- [x] Turnstile widget, Worker mellanrum-kontakt.mellanrum-hoglund.workers.dev, src/config.ts filled in
+- [x] Zone mellanrumpsykoterapi.se created (NS houston/kami.ns.cloudflare.com). It waits for the NS change at Loopia.
 
-## Kräver Christoffer eller kund
+## Needs Christoffer or the customer
 
-- [ ] Email Routing: verifiera anna.b.hoglund@gmail.com, testa formuläret Skäl: MX pekar på Cloudflare. Annas verifiering och ett skarpt formulärprov är kvar, provet skickar mejl. _2026-11-03: Cloudflare API: anna.b.hoglund@gmail.com verifierad 2026-10-29, routing enabled/ready, regeln kontakt@ till Annas Gmail aktiv. Kvar: ett skarpt formulärprov (skickar mejl till Anna), Christoffer._
-- [x] SEO-audit 2026-10-26 (65/100): frågor till Anna, krisrad, lagringstid på integritetssidan, HSTS och www vid DNS-bytet. Plan: ~/Claude/work/audits/mellanrum-2026-10-26/mellanrumpsykoterapi.se-audit/ACTION-PLAN.md Skäl: frågor till Anna, krisrad och lagringstid. HSTS är på. _Avbockad 2026-11-03: krisrad (site.json, 90101 i dist), lagringstid 12 månader på /integritet (commit 8cccd63, Annas svar), HSTS max-age=31536000 och www 301 till apex (curl). Planens punkter utan Annas fakta live: title, og:image, X-Frame-Options, CSP frame-ancestors, 404 noindex, SRI, Turnstile vid scroll. Resten av frågorna på egen rad nedan._
-- [ ] Annas återstående frågor ur audit-planen: adress eller stadsdel, terapimetod och par, Google-företagsprofil, org.nr och moms. _2026-11-03: Places Text Search hittar ingen profil för Mellanrum eller Anna Höglund. Kvar: Annas svar, tas vid genomgången, Christoffer._
-- [ ] Överför repot till AnnaHoglund12, uppdatera `repo` i admin/config.yml Skäl: överföring kräver Annas konto och Christoffers beslut. _2026-11-03: inget provat, överföringen är Christoffers beslut. Kvar: `gh api repos/orangeelefant/mellanrum/transfer -f new_owner=AnnaHoglund12` efter beslut, sedan `repo` i admin/config.yml, Christoffer._
-- [ ] Länk till bokningstjänst om Anna vill Skäl: Annas val. _2026-11-03: inget att bygga förrän Anna valt tjänst. Kvar: Annas val, Christoffer frågar._
+- [ ] Email Routing: make sure anna.b.hoglund@gmail.com is verified. Test the form. Reason: MX points at Cloudflare. Anna's verification and a live form test remain. The test sends an email. _2026-11-03: Cloudflare API: anna.b.hoglund@gmail.com verified 2026-10-29, routing enabled and ready, the rule kontakt@ to Anna's Gmail is active. Remaining: one live form test (sends an email to Anna), Christoffer._
+- [x] SEO audit 2026-10-26 (65/100): questions to Anna, crisis line, retention time on the privacy page, HSTS and www at the DNS change. Plan: ~/Claude/work/audits/mellanrum-2026-10-26/mellanrumpsykoterapi.se-audit/ACTION-PLAN.md Reason: questions to Anna, crisis line and retention time. HSTS is on. _Checked 2026-11-03: crisis line (site.json, 90101 in dist). Retention time 12 months on /integritet (commit 8cccd63, Anna's answer). HSTS max-age=31536000 and www 301 to the apex (curl). Plan items without Anna's facts that are live: title, og:image, X-Frame-Options, CSP frame-ancestors, 404 noindex, SRI, Turnstile on scroll. The other questions are on their own line below._
+- [ ] Anna's open questions from the audit plan. Topics: address or district, therapy method and couples, Google business profile, org.nr and VAT. _2026-11-03: Places Text Search finds no profile. It searched Mellanrum and Anna Höglund. Open: Anna's answers. Christoffer asks at the review._
+- [ ] Transfer the repo to AnnaHoglund12. Change `repo` in admin/config.yml. Reason: the transfer needs Anna's account and Christoffer's decision. _2026-11-03: not tested. The transfer is Christoffer's decision. Remaining: after the decision, run `gh api repos/orangeelefant/mellanrum/transfer -f new_owner=AnnaHoglund12`, then change `repo` in admin/config.yml, Christoffer._
+- [ ] Link to a booking service, if Anna wants it. Reason: Anna's choice. _2026-11-03: nothing to build until Anna chooses a service. Remaining: Anna's choice, Christoffer asks._

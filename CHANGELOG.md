@@ -38,3 +38,4 @@
 - Mejlkitet uppdaterat: rätt etiketter för fält med prototypnamn, knappar i kvitto och utskick
 - Mejlkitet uppdaterat: rätt etiketter för fält med prototypnamn, knappar i kvitto och utskick
 - Dependabot-konfiguration i .github/dependabot.yml: npm och GitHub Actions, minor och patch grupperade, högst 5 öppna PR.
+- Docs: internal text rewritten to ASD-STE100 English.
