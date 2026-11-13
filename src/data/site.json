@@ -106,6 +106,12 @@
         "note": "Samtal erbjuds i Stockholm/Östermalm och digitalt. Studerande med Mecenatkort samt unga vuxna 18-25 år betalar 990 kr. \nAvbokning senast 24 timmar före samtalet, annars debiteras fullt pris."
       },
       {
+        "title": "Parterapi",
+        "price": "2 100 kr",
+        "text": "Per samtal, 75 minuter.",
+        "note": "Processen liknar den individuella terapin men fokus på att förstå både dina egna och din partners reaktioner. Vi arbetar för att ni båda ska kunna möta varandras känslomässiga behov och hitta hjälpsamma vägar framåt. Samtal erbjuds i Stockholm/Östermalm och digitalt. \nAvbokning senast 24 timmar före samtalet, annars debiteras fullt pris."
+      },
+      {
         "title": "Samtalsstöd och coachande samtal",
         "price": "1 250 kr exkl moms",
         "text": "Per samtal, 45 minuter.",
@@ -128,12 +134,6 @@
         "price": "Offert",
         "text": "Upplägg och pris anpassas efter innehåll, tidsåtgång och uppdragsgivarens behov.",
         "note": "Kontakta mig gärna för att diskutera ett uppdrag."
-      },
-      {
-        "title": "Parterapi",
-        "price": "2 100 kr",
-        "text": "Per samtal, 75 minuter.",
-        "note": "Processen liknar den individuella terapin men fokus på att förstå både dina egna och din partners reaktioner. Vi arbetar för att ni båda ska kunna möta varandras känslomässiga behov och hitta hjälpsamma vägar framåt."
       }
     ]
   },
