@@ -5,7 +5,8 @@ Anna Höglund's one-page site for psychotherapy, supervision and training in Sto
 ## Stack
 - Astro 7, static output, no browser-side framework. All copy is in `src/data/site.json`.
 - Sveltia CMS at `/admin` (`public/admin/config.yml`). The GitHub login uses Sveltia CMS Authenticator (a Worker in Anna's Cloudflare account).
-- Cloudflare Pages project `mellanrum` (https://mellanrum-9ac.pages.dev, account 7b54f66e2589fa8ebaba4496dcc765dd). `.github/workflows/deploy.yml` deploys it on each push to main (wrangler pages deploy).
+- Cloudflare Pages project `mellanrum` (https://mellanrum-9ac.pages.dev, account 7b54f66e2589fa8ebaba4496dcc765dd). Deploy manually: `npm run build && npx wrangler@4 pages deploy dist --project-name mellanrum --branch main` with the same env vars as the Worker below.
+- No auto-deploy: the GitHub Action was removed 2026-11-12 (dead — its repo secrets were gone, every run failed). Pushing to main does NOT publish; CMS edits wait for a manual deploy.
 - Contact form: `worker/` (Worker `mellanrum-kontakt`). It does a Turnstile check and sends with the `send_email` binding to anna.b.hoglund@gmail.com. It stores nothing. Observability is off.
 - No cookies, system fonts. Pageviews are counted with Umami (insikt.webraketen.se, cookieless — tag in src/layouts/Base.astro). No other analytics.
 

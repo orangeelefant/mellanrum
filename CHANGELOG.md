@@ -2,6 +2,7 @@
 
 ## [Unreleased]
 - Besöksstatistik med Umami (insikt.webraketen.se): kaklös tagg (wr.js, wr-events.js) i Base.astro, integritetssidan berättar om räknaren. Inga kakor sätts fortfarande.
+- Deploy är manuell (npx wrangler@4 pages deploy dist): GitHub-Action-workflown städades bort 2026-11-12 efter att dess hemligheter försvann. Annas /admin-ändringar 13–16 nov publicerades först vid manuell deploy 18 nov.
 - Kontaktformulärets mejl till Anna byggs med mejlkitet (`worker/src/mail-kit.mjs`, tema `worker/src/mail-theme.mjs`, logga `public/mail/logo.png`): HTML och text, ämne "Ny förfrågan: namn", tidsstämpel och svarsknapp. Inget kvitto till besökaren. Workern måste deployas för att ändringen ska gälla.
 - Första versionen: startsida efter Annas förlaga, porträtt, integritetssida, tacksida, sitemap, robots.txt och llms.txt.
 - Sveltia CMS på /admin för texter, priser och porträtt.
