@@ -7,7 +7,7 @@ Anna Höglund's one-page site for psychotherapy, supervision and training in Sto
 - Sveltia CMS at `/admin` (`public/admin/config.yml`). The GitHub login uses Sveltia CMS Authenticator (a Worker in Anna's Cloudflare account).
 - Cloudflare Pages project `mellanrum` (https://mellanrum-9ac.pages.dev, account 7b54f66e2589fa8ebaba4496dcc765dd). `.github/workflows/deploy.yml` deploys it on each push to main (wrangler pages deploy).
 - Contact form: `worker/` (Worker `mellanrum-kontakt`). It does a Turnstile check and sends with the `send_email` binding to anna.b.hoglund@gmail.com. It stores nothing. Observability is off.
-- No cookies, no analytics, system fonts.
+- No cookies, system fonts. Pageviews are counted with Umami (insikt.webraketen.se, cookieless — tag in src/layouts/Base.astro). No other analytics.
 
 ## Commands
 - `npm run dev` / `npm run build` / `npm run preview` / `npm test` (Worker, no network)
