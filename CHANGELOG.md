@@ -2,7 +2,7 @@
 
 ## [Unreleased]
 - Besöksstatistik med Umami (insikt.webraketen.se): kaklös tagg (wr.js, wr-events.js) i Base.astro, integritetssidan berättar om räknaren. Inga kakor sätts fortfarande.
-- Deploy är manuell (npx wrangler@4 pages deploy dist): GitHub-Action-workflown städades bort 2026-11-12 efter att dess hemligheter försvann. Annas /admin-ändringar 13–16 nov publicerades först vid manuell deploy 18 nov.
+- Automatisk deploy återställd 2026-11-18 (GitHub Action `.github/workflows/deploy.yml` → Cloudflare Pages). Workflowen togs bort 2026-11-12 med fel diagnos — hemligheterna fanns kvar; riktiga felet 9–11 nov var GitHub Actions-fakturering: jobben startade aldrig ("recent account payments have failed or your spending limit needs to be increased"). Nya hemligheter satta: `CLOUDFLARE_API_TOKEN` (Pages-token för Annas konto) och `CLOUDFLARE_ACCOUNT_ID`. Spara i /admin → commit till main → bygge och deploy inom några minuter. Manuell deploy (`npx wrangler@4 pages deploy dist`) fungerar fortfarande som reserv.
 - Kontaktformulärets mejl till Anna byggs med mejlkitet (`worker/src/mail-kit.mjs`, tema `worker/src/mail-theme.mjs`, logga `public/mail/logo.png`): HTML och text, ämne "Ny förfrågan: namn", tidsstämpel och svarsknapp. Inget kvitto till besökaren. Workern måste deployas för att ändringen ska gälla.
 - Första versionen: startsida efter Annas förlaga, porträtt, integritetssida, tacksida, sitemap, robots.txt och llms.txt.
 - Sveltia CMS på /admin för texter, priser och porträtt.
